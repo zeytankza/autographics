@@ -92,6 +92,28 @@
     }
   </style>
   <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Leaflet.js for 100% Ad-Free Interactive Dark Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+
+  <style>
+    /* 100% Ad-Free, No-API-Key Dark Map Styling */
+    #studio-map {
+      background: #0b0e14 !important;
+    }
+    #studio-map .leaflet-tile {
+      filter: invert(100%) hue-rotate(180deg) brightness(88%) contrast(92%);
+    }
+    .leaflet-container {
+      font-family: inherit !important;
+    }
+    .custom-neon-pin {
+      background: transparent !important;
+      border: none !important;
+    }
+  </style>
+
 </head>
 <body class="bg-brand-dark text-gray-200 font-sans antialiased selection:bg-brand-cyan selection:text-black">
 
@@ -218,7 +240,7 @@
       <!-- Background Visual with overlay -->
       <div class="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1920&q=80" 
+          src="https://avatars.mds.yandex.net/get-altay/934739/2a000001870a31ff0b44968d7cbe70cc2456/XXXL" 
           alt="Оклейка премиального автомобиля бронепленкой" 
           class="w-full h-full object-cover object-center scale-105"
         >
@@ -1094,40 +1116,40 @@
           
           <div class="min-w-[300px] sm:min-w-0 snap-center bg-brand-card border border-brand-border rounded-2xl overflow-hidden group">
             <div class="h-60 overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" alt="Оклейка Porsche 911 полиуретаном PPF" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <img src="https://avatars.mds.yandex.net/get-altay/16418365/2a00000197180790fdb253615442eab499b5/XXXL" alt="Оклейка Porsche 911 полиуретаном PPF" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <div class="absolute bottom-3 left-3 px-3 py-1 rounded-lg bg-brand-dark/90 text-white text-xs font-bold backdrop-blur-sm">
-                Porsche 911 Carrera
+                BMW M4 Competition
               </div>
             </div>
             <div class="p-5">
               <div class="text-xs font-semibold text-brand-cyan mb-1">Полная оклейка PPF 360°</div>
-              <div class="text-xs text-gray-400">Полиуретан Stek DynoShield 200 мкм с самозатягивающимся верхним слоем. Защита глянцевых вставок салона.</div>
+              <div class="text-xs text-gray-400">Полная оклейка кузова бронепленкой PPF 200 мкм в фирменном боксе. Сохранение цвета под ярким студийным светом.</div>
             </div>
           </div>
 
           <div class="min-w-[300px] sm:min-w-0 snap-center bg-brand-card border border-brand-border rounded-2xl overflow-hidden group">
             <div class="h-60 overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80" alt="Оклейка BMW M3 антихром и броня" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <img src="https://avatars.mds.yandex.net/get-altay/15343885/2a000001972122017a4eea18c786bb38b3af/XXXL" alt="Оклейка BMW M3 антихром и броня" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <div class="absolute bottom-3 left-3 px-3 py-1 rounded-lg bg-brand-dark/90 text-white text-xs font-bold backdrop-blur-sm">
-                BMW M3 Competition
+                Geely Monjaro
               </div>
             </div>
             <div class="p-5">
-              <div class="text-xs font-semibold text-emerald-400 mb-1">Зоны риска + Shadow Line</div>
-              <div class="text-xs text-gray-400">Бронирование передней части полиуретаном, полный антихром молдингов и решётки радиатора в черный суперглянец.</div>
+              <div class="text-xs font-semibold text-emerald-400 mb-1">Матовый полиуретан Satin Titanium</div>
+              <div class="text-xs text-gray-400">Трансформация заводского глянца в шелковистый сатиновый мат с максимальной антигравийной защитой кузова.</div>
             </div>
           </div>
 
           <div class="min-w-[300px] sm:min-w-0 snap-center bg-brand-card border border-brand-border rounded-2xl overflow-hidden group">
             <div class="h-60 overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80" alt="Оклейка Li Auto L9 полиуретаном PPF" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <img src="https://avatars.mds.yandex.net/get-altay/14664328/2a000001972121ffce86ca373dfca427da5e/XXXL" alt="Оклейка Li Auto L9 полиуретаном PPF" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <div class="absolute bottom-3 left-3 px-3 py-1 rounded-lg bg-brand-dark/90 text-white text-xs font-bold backdrop-blur-sm">
-                Li Auto L9 (Lixiang)
+                Mercedes-Benz Coupe
               </div>
             </div>
             <div class="p-5">
-              <div class="text-xs font-semibold text-brand-cyan mb-1">Комплекс «Трасса Плюс»</div>
-              <div class="text-xs text-gray-400">Оклейка длинной моноброви оптики, капота, бампера и экранов салона матовым антибликовым полиуретаном.</div>
+              <div class="text-xs font-semibold text-brand-cyan mb-1">Изумрудный глянец & Топ-Керамика</div>
+              <div class="text-xs text-gray-400">Многоэтапная детейлинг-полировка ЛКП, удаление голограмм и нанесение 2 слоев нанокерамики 9H для зеркального блеска.</div>
             </div>
           </div>
 
@@ -1369,6 +1391,112 @@
     <!-- =========================================================================
          12. CONTACTS & EXACT GEO MAP (ERMOLOVA 12A, STR. 5)
          ========================================================================= -->
+    
+    <!-- =========================================================================
+         11. REAL STUDIO SHOWCASE & NAVIGATION (PYATIGORSK, ERMOLOVA 12A)
+         ========================================================================= -->
+    <section class="py-16 sm:py-20 bg-brand-surface/40 border-t border-brand-border/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-card border border-brand-cyan/30 text-brand-cyan text-xs font-semibold uppercase tracking-wider mb-3">
+              <i data-lucide="camera" class="w-3.5 h-3.5"></i>
+              <span>Пятигорск • Реальные фотографии студии</span>
+            </div>
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-white">
+              Наша студия на ул. Ермолова, 12А
+            </h2>
+            <p class="text-xs sm:text-sm text-gray-400 mt-2 max-w-xl">
+              Собственные просторные боксы с профессиональным рассеянным светом, стерильной чистотой и удобным заездом для любых авто.
+            </p>
+          </div>
+          <div class="text-xs text-gray-400 mt-3 md:mt-0 flex items-center gap-2">
+            <span>Фото из карточки Яндекс Карт</span>
+            <span class="flex items-center gap-1 text-amber-400 font-bold"><i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400 text-amber-400"></i><span>5.0</span></span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          
+          <!-- Photo 1: Главный фасад с вывеской -->
+          <div class="bg-brand-card border border-brand-border rounded-2xl overflow-hidden group">
+            <div class="h-52 overflow-hidden relative">
+              <img 
+                src="https://avatars.mds.yandex.net/get-altay/14599414/2a0000019718220ee8861e40a2fb858e29e4/XXXL" 
+                alt="Фасад детейлинг студии Авто Графикс Пятигорск ул. Ермолова 12А" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              >
+              <div class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-brand-dark/90 text-brand-cyan text-[11px] font-bold backdrop-blur-sm">
+                Главный фасад
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="font-bold text-white text-sm mb-1">Вывеска и парковка</div>
+              <div class="text-xs text-gray-400">Пятигорск, ул. Ермолова, 12А, стр. 5. Охраняемая парковка для клиентов.</div>
+            </div>
+          </div>
+
+          <!-- Photo 2: Детейлинг-бокс со светом -->
+          <div class="bg-brand-card border border-brand-border rounded-2xl overflow-hidden group">
+            <div class="h-52 overflow-hidden relative">
+              <img 
+                src="https://avatars.mds.yandex.net/get-altay/16243748/2a00000197181646aab92d7188adc20883cd/XXXL" 
+                alt="Mercedes-Benz S-Class в боксе студии Авто Графикс" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              >
+              <div class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-brand-dark/90 text-emerald-400 text-[11px] font-bold backdrop-blur-sm">
+                Рабочий цех
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="font-bold text-white text-sm mb-1">Премиальный бокс</div>
+              <div class="text-xs text-gray-400">Потолочные линейные софиты и стерильная зона оклейки для представительских авто.</div>
+            </div>
+          </div>
+
+          <!-- Photo 3: Входная дверь и график -->
+          <div class="bg-brand-card border border-brand-border rounded-2xl overflow-hidden group">
+            <div class="h-52 overflow-hidden relative">
+              <img 
+                src="https://avatars.mds.yandex.net/get-altay/15311720/2a00000196fd8999e3a6ef7dc92b45c5112d/XXXL" 
+                alt="Вход в детейлинг центр Авто Графикс" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              >
+              <div class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-brand-dark/90 text-brand-cyan text-[11px] font-bold backdrop-blur-sm">
+                Входная группа
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="font-bold text-white text-sm mb-1">Клиентская зона</div>
+              <div class="text-xs text-gray-400">Комфортная приемка, консультация мастера и подбор образцов пленки вживую.</div>
+            </div>
+          </div>
+
+          <!-- Photo 4: Схема удобного проезда -->
+          <div class="bg-brand-card border border-brand-border rounded-2xl overflow-hidden group">
+            <div class="h-52 overflow-hidden relative">
+              <img 
+                src="https://avatars.mds.yandex.net/get-altay/15712232/2a00000197181895dc8576cdc183bf061130/XXXL" 
+                alt="Схема проезда к Авто Графикс с улицы Ермолова" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              >
+              <div class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-brand-dark/90 text-amber-400 text-[11px] font-bold backdrop-blur-sm">
+                Навигация
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="font-bold text-white text-sm mb-1">Схема заезда</div>
+              <div class="text-xs text-gray-400">Понятный заезд со светофора по ул. Ермолова под технологической трубой.</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
     <section id="contacts" class="py-16 sm:py-24 bg-brand-dark border-t border-brand-border/60">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -1442,32 +1570,28 @@
 
           </div>
 
-          <!-- Yandex Maps Embedded Container (Exact Verified Coordinates: 44.043891, 43.026930) -->
-          <div class="lg:col-span-7 bg-brand-card border border-brand-border rounded-2xl overflow-hidden h-[420px] relative shadow-2xl">
-            <!-- Yandex Map Iframe widget with exact coordinates and pin on building 5 -->
-            <iframe 
-              src="https://yandex.ru/map-widget/v1/?ll=43.026930%2C44.043891&z=17&pt=43.026930,44.043891,pm2rdm" 
-              width="100%" 
-              height="100%" 
-              frameborder="0" 
-              allowfullscreen="true" 
-              title="Авто Графикс на Яндекс Картах (Пятигорск, ул. Ермолова, 12А, стр. 5)"
-              class="w-full h-full filter contrast-105"
-            ></iframe>
+                    <!-- 100% Ad-Free Interactive Dark Map (Exact Verified Coordinates: 44.043891, 43.026930) -->
+          <div class="lg:col-span-7 bg-brand-card border border-brand-border rounded-2xl overflow-hidden h-[440px] relative shadow-2xl flex flex-col">
+            <!-- Leaflet Container -->
+            <div id="studio-map" class="w-full h-full z-10" style="background: #0b0e14;"></div>
             
-            <!-- Quick Route Overlay Banner -->
-            <div class="absolute bottom-3 left-3 right-3 sm:left-4 sm:right-auto bg-brand-dark/95 backdrop-blur-md border border-brand-border p-3 rounded-xl shadow-lg flex items-center justify-between gap-3 text-xs">
+            <!-- Quick Route Floating Card -->
+            <div class="absolute bottom-3 left-3 right-3 sm:left-4 sm:right-auto z-20 bg-brand-dark/95 backdrop-blur-md border border-brand-border p-3.5 rounded-xl shadow-2xl flex items-center justify-between gap-3 text-xs">
               <div>
-                <div class="font-bold text-white">«Авто Графикс» Детейлинг</div>
-                <div class="text-[11px] text-gray-400">Широта: 44.043891, Долгота: 43.026930</div>
+                <div class="font-bold text-white flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-brand-cyan animate-pulse"></span>
+                  <span>«Авто Графикс» Детейлинг</span>
+                </div>
+                <div class="text-[11px] text-gray-400 mt-0.5">г. Пятигорск, ул. Ермолова, 12А, стр. 5</div>
               </div>
               <a 
-                href="https://yandex.ru/maps/?rtext=~44.043891,43.026930&rtt=auto" 
+                href="https://yandex.ru/maps/?rtext=~44.043891,43.026930" 
                 target="_blank" 
-                rel="noopener noreferrer" 
-                class="px-3 py-1.5 rounded-lg bg-brand-cyan text-black font-bold text-[11px] hover:bg-brand-cyanHover transition-colors whitespace-nowrap"
+                rel="noopener noreferrer"
+                class="px-3.5 py-2 rounded-xl bg-gradient-to-r from-brand-cyan to-blue-500 hover:from-brand-cyanHover hover:to-blue-600 text-black font-extrabold text-xs shadow-md transition-all flex items-center gap-1.5 whitespace-nowrap"
               >
-                Построить маршрут
+                <i data-lucide="navigation" class="w-3.5 h-3.5"></i>
+                <span>Маршрут в Яндекс</span>
               </a>
             </div>
           </div>
@@ -1964,5 +2088,57 @@
     }
   </script>
   <script>lucide.createIcons();</script>
+
+  <!-- Initialize 100% Ad-Free Dark Map -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('studio-map') && typeof L !== 'undefined') {
+        const studioCoords = [44.043891, 43.026930];
+        const map = L.map('studio-map', {
+          center: studioCoords,
+          zoom: 17,
+          scrollWheelZoom: false,
+          zoomControl: false
+        });
+
+        // Add custom zoom control top right
+        L.control.zoom({ position: 'topright' }).addTo(map);
+
+        // Clean OpenStreetMap tiles + CSS Dark Theme (100% Free, 0% Ads, NO API KEY REQUIRED, NO WATERMARKS)
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer" style="color:#64748b;">OpenStreetMap</a>'
+        }).addTo(map);
+
+        // Custom Glowing Neon-Cyan Marker
+        const customPin = L.divIcon({
+          className: 'custom-neon-pin',
+          html: `
+            <div style="position: relative; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;">
+              <div style="position: absolute; width: 32px; height: 32px; border-radius: 50%; background: rgba(0, 240, 255, 0.35); animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;"></div>
+              <div style="width: 28px; height: 28px; border-radius: 50%; background: #00f0ff; border: 2.5px solid #ffffff; box-shadow: 0 0 20px #00f0ff; display: flex; align-items: center; justify-content: center;">
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #0b0e14;"></div>
+              </div>
+            </div>
+          `,
+          iconSize: [36, 36],
+          iconAnchor: [18, 18],
+          popupAnchor: [0, -20]
+        });
+
+        const marker = L.marker(studioCoords, { icon: customPin }).addTo(map);
+        marker.bindPopup(`
+          <div style="font-family: inherit; color: #fff; background: #0b0e14; padding: 4px; border-radius: 6px;">
+            <div style="font-weight: 800; color: #00f0ff; font-size: 13px; margin-bottom: 2px;">«Авто Графикс» Детейлинг</div>
+            <div style="font-size: 11px; color: #cbd5e1; margin-bottom: 6px;">г. Пятигорск, ул. Ермолова, 12А, стр. 5</div>
+            <a href="https://yandex.ru/maps/?rtext=~44.043891,43.026930" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 4px 10px; background: #00f0ff; color: #000; font-weight: 700; font-size: 11px; border-radius: 6px; text-decoration: none;">
+              Открыть в Яндекс Навигаторе &rarr;
+            </a>
+          </div>
+        `);
+      }
+    });
+  </script>
+
 </body>
 </html>
