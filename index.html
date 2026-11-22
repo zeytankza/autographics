@@ -91,6 +91,7 @@
       animation: healScratch 2.4s ease-in-out forwards;
     }
   </style>
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="bg-brand-dark text-gray-200 font-sans antialiased selection:bg-brand-cyan selection:text-black">
 
@@ -166,10 +167,10 @@
           <span class="hidden md:inline">WhatsApp</span>
         </a>
 
-        <!-- Main Booking Button -->
+        <!-- Main Booking Button (hidden on mobile, handled by Mobile Quick Bar) -->
         <button 
           onclick="openBookingModal('Кнопка в шапке сайта: Записаться')" 
-          class="px-4 sm:px-6 py-2.5 rounded-xl bg-gradient-to-r from-brand-cyan to-blue-500 hover:from-brand-cyanHover hover:to-blue-600 text-black font-heading font-extrabold text-xs sm:text-sm tracking-wide shadow-[0_0_20px_rgba(0,240,255,0.25)] hover:shadow-[0_0_25px_rgba(0,240,255,0.4)] transition-all cursor-pointer whitespace-nowrap"
+          class="hidden sm:inline-flex px-4 sm:px-6 py-2.5 rounded-xl bg-gradient-to-r from-brand-cyan to-blue-500 hover:from-brand-cyanHover hover:to-blue-600 text-black font-heading font-extrabold text-xs sm:text-sm tracking-wide shadow-[0_0_20px_rgba(0,240,255,0.25)] hover:shadow-[0_0_25px_rgba(0,240,255,0.4)] transition-all cursor-pointer whitespace-nowrap"
         >
           Записаться
         </button>
@@ -202,7 +203,7 @@
       </nav>
       <div class="mt-6 pt-4 border-t border-white/10 flex flex-col gap-3">
         <a href="tel:+79286519252" class="text-lg font-bold text-white flex items-center gap-2">
-          <span class="text-brand-cyan">📞</span> +7 (928) 651-92-52
+          <i data-lucide="phone" class="w-4 h-4 text-brand-cyan inline"></i> +7 (928) 651-92-52
         </a>
         <div class="text-xs text-gray-400">г. Пятигорск, ул. Ермолова, 12А, стр. 5</div>
       </div>
@@ -217,7 +218,7 @@
       <!-- Background Visual with overlay -->
       <div class="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1920&q=80" 
+          src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1920&q=80" 
           alt="Оклейка премиального автомобиля бронепленкой" 
           class="w-full h-full object-cover object-center scale-105"
         >
@@ -418,7 +419,7 @@
               
               <div class="space-y-4 text-xs sm:text-sm text-gray-300">
                 <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-surface/60 border border-white/5">
-                  <div class="text-red-400 font-bold text-base mt-0.5">✕</div>
+                  <div class="text-red-400 mt-0.5 flex-shrink-0"><i data-lucide="x" class="w-5 h-5"></i></div>
                   <div>
                     <strong class="text-white block mb-0.5">Гравий и сколы до металла</strong>
                     Обычный заводской лак имеет толщину всего 100–120 мкм. Камень с трассы скалывает его до грунта, вызывая ржавчину уже через одну зиму.
@@ -426,7 +427,7 @@
                 </div>
 
                 <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-surface/60 border border-white/5">
-                  <div class="text-red-400 font-bold text-base mt-0.5">✕</div>
+                  <div class="text-red-400 mt-0.5 flex-shrink-0"><i data-lucide="x" class="w-5 h-5"></i></div>
                   <div>
                     <strong class="text-white block mb-0.5">«Паутина» от бесконтактных моек и песка</strong>
                     Тряпки на мойках, дорожная пыль и ветки создают круговые царапины (голограммы). Машина теряет блеск за 4–6 месяцев.
@@ -434,7 +435,7 @@
                 </div>
 
                 <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-surface/60 border border-white/5">
-                  <div class="text-red-400 font-bold text-base mt-0.5">✕</div>
+                  <div class="text-red-400 mt-0.5 flex-shrink-0"><i data-lucide="x" class="w-5 h-5"></i></div>
                   <div>
                     <strong class="text-white block mb-0.5">Потеря стоимости автомобиля при продаже</strong>
                     При перекраске капота и бампера толщиномер показывает 250–350 мкм. Покупатели сбивают цену на 150 000 – 300 000 ₽.
@@ -461,7 +462,7 @@
               
               <div class="space-y-4 text-xs sm:text-sm text-gray-300">
                 <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-surface/60 border border-brand-cyan/20">
-                  <div class="text-brand-cyan font-bold text-base mt-0.5">✓</div>
+                  <div class="text-brand-cyan mt-0.5 flex-shrink-0"><i data-lucide="check" class="w-5 h-5"></i></div>
                   <div>
                     <strong class="text-white block mb-0.5">Эластичный полимер гасит удары щебня</strong>
                     Полиуретан поглощает кинетическую энергию камней на скорости до 140 км/ч. Скол не достает до родного лакокрасочного покрытия.
@@ -469,7 +470,7 @@
                 </div>
 
                 <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-surface/60 border border-brand-cyan/20">
-                  <div class="text-brand-cyan font-bold text-base mt-0.5">✓</div>
+                  <div class="text-brand-cyan mt-0.5 flex-shrink-0"><i data-lucide="check" class="w-5 h-5"></i></div>
                   <div>
                     <strong class="text-white block mb-0.5">Самозаживление царапин при нагреве от 35°C</strong>
                     Верхний эластомерный слой Top Coat сам затягивает микроцарапины при поливании горячей водой или прогреве на солнце.
@@ -477,7 +478,7 @@
                 </div>
 
                 <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-surface/60 border border-brand-cyan/20">
-                  <div class="text-brand-cyan font-bold text-base mt-0.5">✓</div>
+                  <div class="text-brand-cyan mt-0.5 flex-shrink-0"><i data-lucide="check" class="w-5 h-5"></i></div>
                   <div>
                     <strong class="text-white block mb-0.5">Сохранение 100% родного окраса</strong>
                     Через 3–5 лет пленка снимается без следов клея. Кузов остается новым, как в день выдачи из автосалона.
@@ -509,7 +510,7 @@
                 Нажмите кнопку справа: имитация воздействия солнечного тепла или теплой воды (40°C) на эластомерную плёнку PPF.
               </p>
               <div class="inline-flex items-center gap-2 text-xs text-emerald-400 font-medium">
-                <span>✓ Затягивает следы от жестких щеток, веток и ногтей</span>
+                <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i><span>Затягивает следы от жестких щеток, веток и ногтей</span></span>
               </div>
             </div>
 
@@ -538,7 +539,7 @@
                 id="heal-btn"
                 class="w-64 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-brand-cyan text-black font-heading font-bold text-xs uppercase tracking-wider hover:brightness-110 transition-all cursor-pointer shadow-lg"
               >
-                🔥 Подать тепло (40°C)
+                <i data-lucide="flame" class="w-4 h-4 inline text-amber-400 mr-1.5"></i>Подать тепло (40°C)
               </button>
             </div>
 
@@ -683,7 +684,7 @@
               
               <label class="cursor-pointer p-3.5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 flex items-center justify-between">
                 <div>
-                  <div class="text-xs font-bold text-emerald-400">🎁 Бронирование фар в подарок</div>
+                  <div class="text-xs font-bold text-emerald-400"><span class="flex items-center gap-1"><i data-lucide="gift" class="w-3.5 h-3.5"></i> Бронирование фар в подарок</span></div>
                   <div class="text-[11px] text-gray-400">При заказе оклейки кузова (экономия от 7 000 ₽)</div>
                 </div>
                 <input type="radio" name="gift" value="Бронирование фар" checked class="accent-emerald-400 w-4 h-4">
@@ -691,7 +692,7 @@
 
               <label class="cursor-pointer p-3.5 rounded-xl border border-brand-cyan/30 bg-brand-cyan/10 flex items-center justify-between">
                 <div>
-                  <div class="text-xs font-bold text-brand-cyan">🎁 Гидрофоб «Антидождь» на стекла</div>
+                  <div class="text-xs font-bold text-brand-cyan"><span class="flex items-center gap-1"><i data-lucide="gift" class="w-3.5 h-3.5"></i> Гидрофоб «Антидождь» на стекла</span></div>
                   <div class="text-[11px] text-gray-400">Стойкость до 12 месяцев (экономия 5 000 ₽)</div>
                 </div>
                 <input type="radio" name="gift" value="Антидождь на стекла" class="accent-brand-cyan w-4 h-4">
@@ -704,11 +705,11 @@
               <div>
                 <div class="text-xs text-gray-400">Ориентировочная стоимость работ:</div>
                 <div class="text-2xl sm:text-3xl font-heading font-extrabold text-white" id="quiz-calc-price">
-                  от 45 000 ₽
+                  от 55 000 ₽
                 </div>
               </div>
               <div class="text-xs text-gray-400 text-center sm:text-right">
-                ✓ Включает подготовку ЛКП и гарантию до 7 лет
+                <i data-lucide="check" class="w-3.5 h-3.5 text-brand-cyan inline mr-1"></i>Включает подготовку ЛКП и гарантию до 7 лет
               </div>
             </div>
 
@@ -798,13 +799,13 @@
         <!-- Service Category Tabs -->
         <div class="flex items-center gap-2 sm:gap-3 overflow-x-auto scrollbar-none pb-4 mb-8">
           <button onclick="filterServices('ppf')" id="tab-ppf" class="service-tab-btn px-4 sm:px-5 py-2.5 rounded-xl font-heading font-bold text-xs sm:text-sm tracking-wide bg-brand-cyan text-black whitespace-nowrap transition-all shadow-md">
-            🛡️ Антигравийная защита (PPF)
+            <span class="flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-brand-cyan"></i><span>Антигравийная защита (PPF)</span></span>
           </button>
           <button onclick="filterServices('styling')" id="tab-styling" class="service-tab-btn px-4 sm:px-5 py-2.5 rounded-xl font-heading font-medium text-xs sm:text-sm tracking-wide bg-brand-card text-gray-300 hover:text-white border border-brand-border whitespace-nowrap transition-all">
-            🎨 Автовинил & Смена цвета
+            <span class="flex items-center gap-2"><i data-lucide="palette" class="w-4 h-4 text-indigo-400"></i><span>Автовинил & Смена цвета</span></span>
           </button>
           <button onclick="filterServices('detailing')" id="tab-detailing" class="service-tab-btn px-4 sm:px-5 py-2.5 rounded-xl font-heading font-medium text-xs sm:text-sm tracking-wide bg-brand-card text-gray-300 hover:text-white border border-brand-border whitespace-nowrap transition-all">
-            ✨ Детейлинг, Полировка & Керамика
+            <span class="flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-amber-400"></i><span>Детейлинг, Полировка & Керамика</span></span>
           </button>
         </div>
 
@@ -825,17 +826,17 @@
                 Защита самых уязвимых элементов кузова от камней, песка и насекомых при загородных поездках.
               </p>
               <ul class="text-xs text-gray-300 space-y-2 mb-6">
-                <li class="flex items-center gap-2">✓ Капот полностью</li>
-                <li class="flex items-center gap-2">✓ Передний бампер</li>
-                <li class="flex items-center gap-2">✓ Фары и противотуманки</li>
-                <li class="flex items-center gap-2">✓ Корпуса зеркал и стойки лобового</li>
-                <li class="flex items-center gap-2">✓ Полоса на крышу и под ручками</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>Капот полностью</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>Передний бампер</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>Фары и противотуманки</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>Корпуса зеркал и стойки лобового</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>Полоса на крышу и под ручками</li>
               </ul>
             </div>
             <div>
               <div class="flex items-baseline justify-between mb-4 pt-4 border-t border-brand-border">
                 <span class="text-xs text-gray-400">Стоимость:</span>
-                <span class="text-xl font-heading font-extrabold text-white">от 45 000 ₽</span>
+                <span class="text-xl font-heading font-extrabold text-white">от 55 000 ₽</span>
               </div>
               <button onclick="openBookingModal('Услуга: Комплекс Зоны риска')" class="w-full py-3 rounded-xl bg-brand-surface hover:bg-brand-cyan hover:text-black border border-brand-border hover:border-brand-cyan text-white text-xs font-bold uppercase tracking-wider transition-all cursor-pointer">
                 Записаться на оклейку
@@ -860,10 +861,10 @@
                 Тотальная защита всего заводского лака оригинальным полиуретаном 200–215 мкм. Автомобиль сохраняет салонный вид на долгие годы.
               </p>
               <ul class="text-xs text-gray-300 space-y-2 mb-6">
-                <li class="flex items-center gap-2">✓ 100% элементов кузова в пленке</li>
-                <li class="flex items-center gap-2">✓ Заворот всех краев (без стыков)</li>
-                <li class="flex items-center gap-2">✓ Гидрофобный самовосстанавливающийся слой</li>
-                <li class="flex items-center gap-2">✓ Защита от реагентов и птичьего помета</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>100% элементов кузова в пленке</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>Заворот всех краев (без стыков)</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>Гидрофобный самовосстанавливающийся слой</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>Защита от реагентов и птичьего помета</li>
               </ul>
             </div>
             <div>
@@ -881,17 +882,17 @@
           <div class="service-card min-w-[280px] sm:min-w-0 snap-center bg-brand-card border border-brand-border hover:border-brand-cyan/40 rounded-2xl p-6 flex flex-col justify-between transition-all group" data-category="ppf">
             <div>
               <div class="h-44 rounded-xl overflow-hidden mb-5 relative">
-                <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=600&q=80" alt="Защита мониторов и глянца салона авто" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80" alt="Защита мониторов и глянца салона авто" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               </div>
               <h3 class="text-xl font-heading font-bold text-white mb-2">Бронирование интерьера салона</h3>
               <p class="text-xs text-gray-400 mb-4 leading-relaxed">
                 Защита экранов мультимедиа, цифровой приборной панели, рояльного пластика (Piano Black) от царапин ногтями и ключами.
               </p>
               <ul class="text-xs text-gray-300 space-y-2 mb-6">
-                <li class="flex items-center gap-2">✓ Плоттерный раскрой по лекалам</li>
-                <li class="flex items-center gap-2">✓ Матовый или глянцевый полиуретан</li>
-                <li class="flex items-center gap-2">✓ Никаких следов клея при снятии</li>
-                <li class="flex items-center gap-2">✓ Приятный тактильный отклик экранов</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>Плоттерный раскрой по лекалам</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>Матовый или глянцевый полиуретан</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>Никаких следов клея при снятии</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>Приятный тактильный отклик экранов</li>
               </ul>
             </div>
             <div>
@@ -919,15 +920,15 @@
                 Кардинальная смена цвета автомобиля без перекраски с сохранением оригинального заводского слоя. Более 200 оттенков: мат, сатин, глянец, хамелеон.
               </p>
               <ul class="text-xs text-gray-300 space-y-2 mb-6">
-                <li class="flex items-center gap-2">✓ Премиальные литые винилы</li>
-                <li class="flex items-center gap-2">✓ Полная проклейка дверных проемов</li>
-                <li class="flex items-center gap-2">✓ Защита от мелких потертостей</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>Премиальные литые винилы</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>Полная проклейка дверных проемов</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>Защита от мелких потертостей</li>
               </ul>
             </div>
             <div>
               <div class="flex items-baseline justify-between mb-4 pt-4 border-t border-brand-border">
                 <span class="text-xs text-gray-400">Стоимость:</span>
-                <span class="text-xl font-heading font-extrabold text-white">от 110 000 ₽</span>
+                <span class="text-xl font-heading font-extrabold text-white">от 220 000 ₽</span>
               </div>
               <button onclick="openBookingModal('Услуга: Смена цвета цветной пленкой')" class="w-full py-3 rounded-xl bg-brand-surface hover:bg-brand-cyan hover:text-black border border-brand-border hover:border-brand-cyan text-white text-xs font-bold uppercase tracking-wider transition-all cursor-pointer">
                 Выбрать цвет
@@ -946,9 +947,9 @@
                 Удаление хромированных элементов. Оклейка оконных молдингов, решёток радиатора, накладок бамперов в глубокий чёрный глянец или сатин.
               </p>
               <ul class="text-xs text-gray-300 space-y-2 mb-6">
-                <li class="flex items-center gap-2">✓ Защита от помутнения хрома от химии</li>
-                <li class="flex items-center gap-2">✓ Стильный строгий внешний вид</li>
-                <li class="flex items-center gap-2">✓ Срок службы пленки до 5 лет</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>Защита от помутнения хрома от химии</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>Стильный строгий внешний вид</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>Срок службы пленки до 5 лет</li>
               </ul>
             </div>
             <div>
@@ -973,9 +974,9 @@
                 Глубокая восстановительная полировка кузова с удалением до 95% микроцарапин и нанесение 2–3 слоев нанокерамики с гидрофобным эффектом.
               </p>
               <ul class="text-xs text-gray-300 space-y-2 mb-6">
-                <li class="flex items-center gap-2">✓ Зеркальный глубокий блеск</li>
-                <li class="flex items-center gap-2">✓ Мощный гидрофоб (грязь не липнет)</li>
-                <li class="flex items-center gap-2">✓ Защита от УФ-выгорания цвета</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>Зеркальный глубокий блеск</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>Мощный гидрофоб (грязь не липнет)</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>Защита от УФ-выгорания цвета</li>
               </ul>
             </div>
             <div>
@@ -1014,8 +1015,8 @@
           
           <div class="bg-brand-card border border-brand-border/80 rounded-2xl p-6 relative flex flex-col justify-between">
             <div>
-              <div class="w-10 h-10 rounded-xl bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan flex items-center justify-center font-bold text-lg mb-4">
-                🚗
+              <div class="w-10 h-10 rounded-xl bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan flex items-center justify-center mb-4">
+                <i data-lucide="car" class="w-5 h-5"></i>
               </div>
               <h3 class="text-base font-heading font-bold text-white mb-2">Новый авто из салона</h3>
               <p class="text-xs text-gray-400 leading-relaxed mb-4">
@@ -1027,8 +1028,8 @@
 
           <div class="bg-brand-card border border-brand-border/80 rounded-2xl p-6 relative flex flex-col justify-between">
             <div>
-              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-lg mb-4">
-                ⛰️
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-4">
+                <i data-lucide="mountain" class="w-5 h-5"></i>
               </div>
               <h3 class="text-base font-heading font-bold text-white mb-2">Частые поездки по трассам</h3>
               <p class="text-xs text-gray-400 leading-relaxed mb-4">
@@ -1040,8 +1041,8 @@
 
           <div class="bg-brand-card border border-brand-border/80 rounded-2xl p-6 relative flex flex-col justify-between">
             <div>
-              <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-lg mb-4">
-                👑
+              <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-4">
+                <i data-lucide="crown" class="w-5 h-5"></i>
               </div>
               <h3 class="text-base font-heading font-bold text-white mb-2">Премиум & Люкс авто</h3>
               <p class="text-xs text-gray-400 leading-relaxed mb-4">
@@ -1053,8 +1054,8 @@
 
           <div class="bg-brand-card border border-brand-border/80 rounded-2xl p-6 relative flex flex-col justify-between">
             <div>
-              <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center font-bold text-lg mb-4">
-                ✨
+              <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center mb-4">
+                <i data-lucide="sparkles" class="w-5 h-5"></i>
               </div>
               <h3 class="text-base font-heading font-bold text-white mb-2">Желание выделиться</h3>
               <p class="text-xs text-gray-400 leading-relaxed mb-4">
@@ -1093,7 +1094,7 @@
           
           <div class="min-w-[300px] sm:min-w-0 snap-center bg-brand-card border border-brand-border rounded-2xl overflow-hidden group">
             <div class="h-60 overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80" alt="Оклейка Porsche 911 полиуретаном PPF" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" alt="Оклейка Porsche 911 полиуретаном PPF" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <div class="absolute bottom-3 left-3 px-3 py-1 rounded-lg bg-brand-dark/90 text-white text-xs font-bold backdrop-blur-sm">
                 Porsche 911 Carrera
               </div>
@@ -1106,7 +1107,7 @@
 
           <div class="min-w-[300px] sm:min-w-0 snap-center bg-brand-card border border-brand-border rounded-2xl overflow-hidden group">
             <div class="h-60 overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1555353540-64580b51c258?auto=format&fit=crop&w=800&q=80" alt="Оклейка BMW M3 антихром и броня" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80" alt="Оклейка BMW M3 антихром и броня" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <div class="absolute bottom-3 left-3 px-3 py-1 rounded-lg bg-brand-dark/90 text-white text-xs font-bold backdrop-blur-sm">
                 BMW M3 Competition
               </div>
@@ -1119,7 +1120,7 @@
 
           <div class="min-w-[300px] sm:min-w-0 snap-center bg-brand-card border border-brand-border rounded-2xl overflow-hidden group">
             <div class="h-60 overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" alt="Тонирование оптики и полиуретан" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80" alt="Оклейка Li Auto L9 полиуретаном PPF" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <div class="absolute bottom-3 left-3 px-3 py-1 rounded-lg bg-brand-dark/90 text-white text-xs font-bold backdrop-blur-sm">
                 Li Auto L9 (Lixiang)
               </div>
@@ -1203,7 +1204,7 @@
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
             <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold mb-3">
-              <span>★ 5.0 из 5 на Яндекс Картах</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400 inline"></i><span>5.0 из 5 на Яндекс Картах</span></span>
             </div>
             <h2 class="text-2xl sm:text-4xl font-heading font-extrabold text-white">
               Отзывы клиентов студии «Авто Графикс»
@@ -1237,7 +1238,7 @@
                     <div class="text-[11px] text-gray-500">BMW X5 G05 • Пятигорск</div>
                   </div>
                 </div>
-                <div class="text-amber-400 text-xs">★★★★★</div>
+                <div class="flex items-center text-amber-400 gap-0.5"><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i></div>
               </div>
               <p class="text-xs text-gray-300 leading-relaxed">
                 «Отдавал свой X5 на комплексную оклейку зон риска полиуретаном и антихром оконных рамок. Ребята сделали ювелирно! Ни одного пузырька, все края аккуратно подвернуты. Проехал уже 15 000 км по трассам — ни одного скола. Рекомендую однозначно!»
@@ -1261,7 +1262,7 @@
                     <div class="text-[11px] text-gray-500">Geely Monjaro • Ессентуки</div>
                   </div>
                 </div>
-                <div class="text-amber-400 text-xs">★★★★★</div>
+                <div class="flex items-center text-amber-400 gap-0.5"><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i></div>
               </div>
               <p class="text-xs text-gray-300 leading-relaxed">
                 «Забрал новый Монжаро из салона и сразу пригнал в Авто Графикс на Ермолова. Закатали полностью переднюю часть, стойки и мониторы в салоне. Очень вежливый персонал, показали образцы пленок на стенде, объяснили разницу в топкоуте. Сервис на 5+!»
@@ -1285,7 +1286,7 @@
                     <div class="text-[11px] text-gray-500">Mercedes E-class • Кисловодск</div>
                   </div>
                 </div>
-                <div class="text-amber-400 text-xs">★★★★★</div>
+                <div class="flex items-center text-amber-400 gap-0.5"><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i></div>
               </div>
               <p class="text-xs text-gray-300 leading-relaxed">
                 «Делал оклейку кузова в серый матовый сатин плюс бронирование фар полиуретаном. Машина преобразилась кардинально, выглядит невероятно дорого. Сроки выдержали строго, выдали гарантийный талон. Лучший детейлинг на КМВ!»
@@ -1384,7 +1385,7 @@
               
               <div class="flex items-start gap-3.5">
                 <div class="w-9 h-9 rounded-xl bg-brand-surface border border-brand-border text-brand-cyan flex items-center justify-center flex-shrink-0">
-                  📍
+                  <i data-lucide="map-pin" class="w-4 h-4"></i>
                 </div>
                 <div>
                   <div class="font-bold text-white mb-0.5">Адрес детейлинг-центра:</div>
@@ -1395,7 +1396,7 @@
 
               <div class="flex items-start gap-3.5">
                 <div class="w-9 h-9 rounded-xl bg-brand-surface border border-brand-border text-brand-cyan flex items-center justify-center flex-shrink-0">
-                  🕒
+                  <i data-lucide="clock" class="w-4 h-4"></i>
                 </div>
                 <div>
                   <div class="font-bold text-white mb-0.5">График работы:</div>
@@ -1406,7 +1407,7 @@
 
               <div class="flex items-start gap-3.5">
                 <div class="w-9 h-9 rounded-xl bg-brand-surface border border-brand-border text-brand-cyan flex items-center justify-center flex-shrink-0">
-                  📞
+                  <i data-lucide="phone" class="w-4 h-4"></i>
                 </div>
                 <div>
                   <div class="font-bold text-white mb-0.5">Телефон для записи:</div>
@@ -1534,7 +1535,7 @@
       href="tel:+79286519252" 
       class="flex-1 py-3 rounded-xl bg-brand-surface border border-brand-border text-white text-center font-bold text-xs flex items-center justify-center gap-1.5"
     >
-      <span>📞 Позвонить</span>
+      <span class="flex items-center gap-1.5"><i data-lucide="phone" class="w-4 h-4"></i><span>Позвонить</span></span>
     </a>
     <a 
       href="https://wa.me/79286519252" 
@@ -1561,8 +1562,8 @@
     aria-label="Согласие на использование cookie"
   >
     <div class="flex items-start gap-3.5">
-      <div class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 text-amber-400 text-lg">
-        🍪
+      <div class="w-9 h-9 rounded-xl bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center flex-shrink-0 text-brand-cyan">
+        <i data-lucide="shield-alert" class="w-5 h-5"></i>
       </div>
       <div class="text-xs text-[#D1D5DB] leading-relaxed">
         Мы используем файлы cookie для корректной работы сайта и аналитики. Продолжая пользоваться сайтом, вы соглашаетесь с 
@@ -1587,8 +1588,8 @@
   <div id="booking-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
     <div class="bg-brand-card border border-brand-border rounded-2xl max-w-md w-full p-6 sm:p-8 relative shadow-2xl max-h-[90vh] overflow-y-auto">
       
-      <button onclick="closeBookingModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-brand-surface border border-brand-border text-gray-400 hover:text-white flex items-center justify-center text-sm cursor-pointer">
-        ✕
+      <button onclick="closeBookingModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-brand-surface border border-brand-border text-gray-400 hover:text-white flex items-center justify-center cursor-pointer transition-colors">
+        <i data-lucide="x" class="w-4 h-4"></i>
       </button>
 
       <div class="text-xs font-heading font-bold uppercase tracking-widest text-brand-cyan mb-1">Студия «Авто Графикс»</div>
@@ -1675,8 +1676,8 @@
       
       <div class="flex items-center justify-between pb-4 border-b border-brand-border">
         <h3 class="text-lg font-heading font-bold text-white" id="legal-modal-title">Юридический документ</h3>
-        <button onclick="closeLegalModal()" class="w-8 h-8 rounded-full bg-brand-surface border border-brand-border text-gray-400 hover:text-white flex items-center justify-center text-sm cursor-pointer">
-          ✕
+        <button onclick="closeLegalModal()" class="w-8 h-8 rounded-full bg-brand-surface border border-brand-border text-gray-400 hover:text-white flex items-center justify-center cursor-pointer transition-colors">
+          <i data-lucide="x" class="w-4 h-4"></i>
         </button>
       </div>
 
@@ -1744,7 +1745,7 @@
 
       setTimeout(() => {
         badge.className = 'absolute bottom-2 right-2 px-2 py-0.5 rounded bg-emerald-500 text-black text-[10px] font-bold';
-        badge.innerText = '✓ Царапины затянулись (100% глянец)';
+        badge.innerHTML = '<i data-lucide="check" class="w-3.5 h-3.5 inline mr-1"></i>Царапины затянулись (100% глянец)'; lucide.createIcons();
         btn.innerText = '↺ Поцарапать снова для теста';
         btn.disabled = false;
         btn.onclick = resetHealingSimulator;
@@ -1760,7 +1761,7 @@
       svg.classList.remove('scratch-healing');
       badge.className = 'absolute bottom-2 right-2 px-2 py-0.5 rounded bg-red-600/80 text-white text-[10px] font-bold';
       badge.innerText = 'Царапины на лаке';
-      btn.innerText = '🔥 Подать тепло (40°C)';
+      btn.innerText = '<i data-lucide="flame" class="w-4 h-4 inline text-amber-400 mr-1.5"></i>Подать тепло (40°C)';
       btn.onclick = simulateTopCoatHealing;
     }
 
@@ -1962,5 +1963,6 @@
       }
     }
   </script>
+  <script>lucide.createIcons();</script>
 </body>
 </html>
