@@ -3,6 +3,7 @@
 Generator for Auto Graphics Detailing Studio Website (Pyatigorsk)
 VLADISLAND.STUDIO High-Tech Auto / Dark Luxury Archetype
 Compliant with 152-FZ, Mobile-First, WCAG AAA
+Clean Spacious Header & Real Technical PPF Comparison
 """
 
 HTML_CONTENT = """<!DOCTYPE html>
@@ -11,11 +12,11 @@ HTML_CONTENT = """<!DOCTYPE html>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Детейлинг-центр «Авто Графикс» Пятигорск — Оклейка полиуретаном PPF, автовинил, защита кузова</title>
-  <meta name="description" content="Премиальная оклейка полиуретановыми плёнками PPF, бронирование зон риска, смена цвета, керамика и детейлинг в Пятигорске. Гарантия до 7 лет. Ермолова 12А, стр. 5. Телефон: +7 (928) 651-92-52">
-  <meta name="theme-color" content="#090b0e">
+  <meta name="description" content="Премиальная оклейка полиуретановыми плёнками PPF, бронирование зон риска, смена цвета, керамика и детейлинг в Пятигорске. Гарантия до 7 лет. ул. Ермолова 12А, стр. 5. Телефон: +7 (928) 651-92-52">
+  <meta name="theme-color" content="#080a0d">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23090b0e'/><path d='M25 65 L45 25 L55 25 L75 65 L63 65 L50 38 L37 65 Z' fill='%2300f0ff'/><path d='M33 55 L67 55' stroke='%2310b981' stroke-width='6'/></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23080a0d'/><path d='M25 65 L45 25 L55 25 L75 65 L63 65 L50 38 L37 65 Z' fill='%2300f0ff'/><path d='M33 55 L67 55' stroke='%2310b981' stroke-width='6'/></svg>">
 
   <!-- Google Fonts: Space Grotesk + Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,96 +76,113 @@ HTML_CONTENT = """<!DOCTYPE html>
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
-    
-    /* Before/After slider handle */
-    .before-after-handle {
-      box-shadow: 0 0 20px rgba(0, 240, 255, 0.6);
+
+    /* Top Coat Scratch Healing Demo Animations */
+    @keyframes healScratch {
+      0% {
+        opacity: 0.9;
+        filter: blur(0px);
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.4;
+        filter: blur(1px);
+        transform: scale(0.98);
+      }
+      100% {
+        opacity: 0;
+        filter: blur(3px);
+        transform: scale(0.95);
+      }
+    }
+    .scratch-healing {
+      animation: healScratch 2.4s ease-in-out forwards;
     }
   </style>
 </head>
 <body class="bg-brand-dark text-gray-200 font-sans antialiased selection:bg-brand-cyan selection:text-black">
 
   <!-- =========================================================================
-       1. TOP NOTIFICATION BAR
+       1. CLEAN, SPACIOUS, LUXURY FLOATING HEADER (NO COLLISION, NO BUSY TOP BAR)
        ========================================================================= -->
-  <div class="bg-gradient-to-r from-brand-dark via-brand-card to-brand-dark border-b border-brand-border/60 py-2 px-4 text-xs">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
-      <div class="flex items-center gap-2 text-gray-400">
-        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 font-medium text-[11px] border border-emerald-500/20">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Открыто
-        </span>
-        <span>Пятигорск, ул. Ермолова, 12А, стр. 5 • Пн-Сб 09:00 - 19:00</span>
-      </div>
-      <div class="flex items-center gap-4 text-gray-300">
-        <div class="flex items-center gap-1 text-amber-400">
-          <span>★ 5.0</span>
-          <span class="text-gray-400 text-[11px]">на Яндекс Картах (40+ отзывов)</span>
-        </div>
-        <span class="text-gray-600 hidden md:inline">|</span>
-        <a href="tel:+79286519252" class="hover:text-brand-cyan font-semibold text-white transition-colors flex items-center gap-1">
-          <svg class="w-3.5 h-3.5 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-          +7 (928) 651-92-52
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- =========================================================================
-       2. HEADER & STICKY NAVIGATION
-       ========================================================================= -->
-  <header class="sticky top-0 z-40 bg-brand-dark/90 backdrop-blur-md border-b border-white/5 transition-all">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+  <header class="sticky top-0 z-40 bg-brand-dark/95 backdrop-blur-xl border-b border-brand-border/70 transition-all shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-22 flex items-center justify-between gap-4">
       
-      <!-- Logo -->
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-card to-brand-border border border-brand-cyan/30 flex items-center justify-center text-brand-cyan group-hover:border-brand-cyan transition-all shadow-[0_0_15px_rgba(0,240,255,0.15)]">
-          <svg class="w-6 h-6 transform group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <!-- Brand Logo with dedicated breathing room -->
+      <a href="#" class="flex items-center gap-3.5 flex-shrink-0 mr-4 lg:mr-8 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-card to-brand-surface border border-brand-cyan/40 flex items-center justify-center text-brand-cyan group-hover:border-brand-cyan group-hover:shadow-[0_0_20px_rgba(0,240,255,0.4)] transition-all flex-shrink-0">
+          <svg class="w-6 h-6 transform group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
           </svg>
         </div>
-        <div>
-          <div class="font-heading font-extrabold text-xl sm:text-2xl tracking-wider text-white flex items-center gap-1.5">
+        <div class="flex flex-col">
+          <span class="font-heading font-extrabold text-lg sm:text-xl xl:text-2xl tracking-wider text-white whitespace-nowrap leading-tight">
             АВТО<span class="text-brand-cyan">ГРАФИКС</span>
-          </div>
-          <div class="text-[10px] tracking-widest uppercase text-gray-400 font-medium">Студия детейлинга & PPF • КМВ</div>
+          </span>
+          <span class="text-[10px] tracking-wider uppercase text-gray-400 font-medium whitespace-nowrap">
+            Детейлинг & PPF • Пятигорск
+          </span>
         </div>
       </a>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-gray-300">
-        <a href="#services" class="hover:text-brand-cyan transition-colors">Услуги & Тарифы</a>
-        <a href="#calculator" class="hover:text-brand-cyan transition-colors flex items-center gap-1">
-          <span class="w-2 h-2 rounded-full bg-brand-cyan animate-ping"></span>
-          Калькулятор
+      <!-- Desktop Navigation Menu (strictly single-line, whitespace-nowrap) -->
+      <nav class="hidden lg:flex items-center gap-5 xl:gap-8 text-sm font-medium text-gray-300 flex-shrink-0">
+        <a href="#services" class="hover:text-brand-cyan transition-colors whitespace-nowrap py-1">
+          Услуги
         </a>
-        <a href="#portfolio" class="hover:text-brand-cyan transition-colors">Наши работы</a>
-        <a href="#advantages" class="hover:text-brand-cyan transition-colors">Материалы & Гарантия</a>
-        <a href="#reviews" class="hover:text-brand-cyan transition-colors">Отзывы (5.0)</a>
-        <a href="#contacts" class="hover:text-brand-cyan transition-colors">Контакты</a>
+        <a href="#calculator" class="hover:text-brand-cyan transition-colors whitespace-nowrap py-1 flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-brand-cyan animate-pulse"></span>
+          <span>Калькулятор</span>
+        </a>
+        <a href="#why-ppf" class="hover:text-brand-cyan transition-colors whitespace-nowrap py-1">
+          Защита PPF
+        </a>
+        <a href="#portfolio" class="hover:text-brand-cyan transition-colors whitespace-nowrap py-1">
+          Портфолио
+        </a>
+        <a href="#reviews" class="hover:text-brand-cyan transition-colors whitespace-nowrap py-1 flex items-center gap-1">
+          <span>Отзывы</span>
+          <span class="text-amber-400 text-xs font-bold">5.0</span>
+        </a>
+        <a href="#contacts" class="hover:text-brand-cyan transition-colors whitespace-nowrap py-1">
+          Контакты
+        </a>
       </nav>
 
-      <!-- Action Buttons -->
-      <div class="flex items-center gap-3">
-        <!-- WhatsApp direct button -->
+      <!-- Right Action Area: Phone + Call-to-action button -->
+      <div class="flex items-center gap-3 sm:gap-4 flex-shrink-0">
+        
+        <!-- Phone number with status dot (desktop) -->
+        <div class="hidden xl:flex flex-col items-end text-right">
+          <a href="tel:+79286519252" class="font-heading font-bold text-sm text-white hover:text-brand-cyan transition-colors whitespace-nowrap">
+            +7 (928) 651-92-52
+          </a>
+          <div class="flex items-center gap-1.5 text-[11px] text-gray-400">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+            <span>ул. Ермолова, 12А, стр. 5</span>
+          </div>
+        </div>
+
+        <!-- WhatsApp Quick Link -->
         <a 
-          href="https://wa.me/79286519252?text=Здравствуйте!%20Хочу%20рассчитать%20стоимость%20оклейки%20моего%20авто" 
+          href="https://wa.me/79286519252?text=Здравствуйте!%20Хочу%20узнать%20стоимость%20оклейки%20моего%20авто" 
           target="_blank" 
           rel="noopener noreferrer"
-          class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-semibold transition-all"
+          class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-semibold transition-all whitespace-nowrap"
         >
-          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-          Консультация
+          <svg class="w-4 h-4 fill-current flex-shrink-0" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          <span class="hidden md:inline">WhatsApp</span>
         </a>
 
-        <!-- Main CTA button -->
+        <!-- Main Booking Button -->
         <button 
-          onclick="openBookingModal('Заказ звонка из шапки')" 
-          class="px-4 sm:px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-cyan to-blue-500 hover:from-brand-cyanHover hover:to-blue-600 text-black font-heading font-bold text-xs sm:text-sm tracking-wide shadow-[0_0_20px_rgba(0,240,255,0.25)] hover:shadow-[0_0_25px_rgba(0,240,255,0.4)] transition-all cursor-pointer"
+          onclick="openBookingModal('Кнопка в шапке сайта: Записаться')" 
+          class="px-4 sm:px-6 py-2.5 rounded-xl bg-gradient-to-r from-brand-cyan to-blue-500 hover:from-brand-cyanHover hover:to-blue-600 text-black font-heading font-extrabold text-xs sm:text-sm tracking-wide shadow-[0_0_20px_rgba(0,240,255,0.25)] hover:shadow-[0_0_25px_rgba(0,240,255,0.4)] transition-all cursor-pointer whitespace-nowrap"
         >
           Записаться
         </button>
 
-        <!-- Mobile Menu Toggle Button -->
+        <!-- Mobile Drawer Menu Toggle -->
         <button 
           id="mobile-menu-btn" 
           onclick="toggleMobileMenu()" 
@@ -185,8 +203,8 @@ HTML_CONTENT = """<!DOCTYPE html>
           <span>Калькулятор стоимости</span>
           <span class="text-xs px-2 py-0.5 rounded bg-brand-cyan/20 text-brand-cyan">Бонус</span>
         </a>
+        <a href="#why-ppf" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-brand-cyan py-1">Тест защиты полиуретана PPF</a>
         <a href="#portfolio" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-brand-cyan py-1">Примеры работ</a>
-        <a href="#advantages" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-brand-cyan py-1">Преимущества & Пленки</a>
         <a href="#reviews" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-brand-cyan py-1">Отзывы (Яндекс Карты)</a>
         <a href="#contacts" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-brand-cyan py-1">Контакты и адрес</a>
       </nav>
@@ -201,17 +219,17 @@ HTML_CONTENT = """<!DOCTYPE html>
 
   <main>
     <!-- =========================================================================
-         3. HERO SECTION
+         2. HERO SECTION
          ========================================================================= -->
-    <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-16 lg:py-24">
+    <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden py-16 lg:py-24">
       <!-- Background Visual with overlay -->
       <div class="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1920&q=80" 
           alt="Оклейка премиального автомобиля бронепленкой" 
-          class="w-full h-full object-cover object-center scale-105 transform motion-safe:animate-pulse duration-[10000ms]"
+          class="w-full h-full object-cover object-center scale-105"
         >
-        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/85 to-brand-dark/60"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/85 to-brand-dark/65"></div>
         <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-cyan/10 via-transparent to-transparent"></div>
       </div>
 
@@ -220,10 +238,10 @@ HTML_CONTENT = """<!DOCTYPE html>
           
           <div class="lg:col-span-8 flex flex-col items-center sm:items-start">
             
-            <!-- Badge -->
+            <!-- City & Studio Badge -->
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-surface/90 border border-brand-cyan/30 text-brand-cyan text-xs font-semibold tracking-wide uppercase mb-6 backdrop-blur-sm shadow-[0_0_15px_rgba(0,240,255,0.15)]">
               <span class="w-2 h-2 rounded-full bg-brand-cyan animate-ping"></span>
-              Премиальная защита авто в Пятигорске
+              Пятигорск • Студия детейлинга & PPF «Авто Графикс»
             </div>
 
             <!-- Main Heading -->
@@ -237,21 +255,21 @@ HTML_CONTENT = """<!DOCTYPE html>
 
             <!-- Subtitle -->
             <p class="text-base sm:text-lg lg:text-xl text-gray-300 max-w-2xl font-normal leading-relaxed mb-8">
-              Защитите лакокрасочное покрытие от гравия, веток и пескоструя дорог Кавказа. Оклейка полиуретаном толщиной 190–215 мкм с эффектом мгновенного самозаживления царапин от солнца.
+              Защитите лакокрасочное покрытие от гравия, веток и пескоструя дорог Кавказа. Оклейка оригинальным полиуретаном толщиной 190–215 мкм с эффектом мгновенного самозаживления царапин от тепла.
             </p>
 
             <!-- Key Feature Points -->
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 mb-10 w-full max-w-xl text-left">
-              <div class="bg-brand-surface/70 border border-brand-border/80 rounded-xl p-3 backdrop-blur-sm">
-                <div class="text-brand-cyan font-bold text-base sm:text-lg">100% Top Coat</div>
-                <div class="text-gray-400 text-xs">Самозатягивание царапин при нагреве</div>
+              <div class="bg-brand-surface/70 border border-brand-border/80 rounded-xl p-3.5 backdrop-blur-sm">
+                <div class="text-brand-cyan font-bold text-base sm:text-lg">Top Coat 100%</div>
+                <div class="text-gray-400 text-xs">Царапины затягиваются от солнца</div>
               </div>
-              <div class="bg-brand-surface/70 border border-brand-border/80 rounded-xl p-3 backdrop-blur-sm">
+              <div class="bg-brand-surface/70 border border-brand-border/80 rounded-xl p-3.5 backdrop-blur-sm">
                 <div class="text-emerald-400 font-bold text-base sm:text-lg">0% пожелтения</div>
-                <div class="text-gray-400 text-xs">Премиальные пленки Stek, SunTek, Llumar</div>
+                <div class="text-gray-400 text-xs">Премиальные плёнки Stek, Llumar, SunTek</div>
               </div>
-              <div class="col-span-2 sm:col-span-1 bg-brand-surface/70 border border-brand-border/80 rounded-xl p-3 backdrop-blur-sm">
-                <div class="text-amber-400 font-bold text-base sm:text-lg">5.0 Рейтинг</div>
+              <div class="col-span-2 sm:col-span-1 bg-brand-surface/70 border border-brand-border/80 rounded-xl p-3.5 backdrop-blur-sm">
+                <div class="text-amber-400 font-bold text-base sm:text-lg">Рейтинг 5.0</div>
                 <div class="text-gray-400 text-xs">Яндекс Карты (ул. Ермолова, 12А)</div>
               </div>
             </div>
@@ -278,18 +296,18 @@ HTML_CONTENT = """<!DOCTYPE html>
 
           <!-- Hero Right Quick Card -->
           <div class="lg:col-span-4 hidden lg:block">
-            <div class="bg-gradient-to-b from-brand-surface/90 to-brand-card/90 border border-brand-cyan/20 rounded-2xl p-6 backdrop-blur-md shadow-2xl relative">
+            <div class="bg-gradient-to-b from-brand-surface/90 to-brand-card/90 border border-brand-cyan/30 rounded-2xl p-6 backdrop-blur-md shadow-2xl relative">
               <div class="absolute -top-3 right-4 px-3 py-1 rounded-full bg-emerald-500 text-black font-bold text-[11px] tracking-wide uppercase">
-                Спецпредложение ноября
+                Спецпредложение месяца
               </div>
 
               <div class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-2">Пакет «Зоны риска +»</div>
-              <div class="text-2xl font-heading font-bold text-white mb-3">Комплексная броня капота и фар</div>
+              <div class="text-2xl font-heading font-bold text-white mb-3">Комплексная броня передней части</div>
               
               <ul class="space-y-2.5 text-xs text-gray-300 mb-6">
                 <li class="flex items-center gap-2">
                   <svg class="w-4 h-4 text-brand-cyan flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                  <span>Капот полностью (полиуретан 200 мкм)</span>
+                  <span>Капот целиком (полиуретан 200–215 мкм)</span>
                 </li>
                 <li class="flex items-center gap-2">
                   <svg class="w-4 h-4 text-brand-cyan flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -297,15 +315,15 @@ HTML_CONTENT = """<!DOCTYPE html>
                 </li>
                 <li class="flex items-center gap-2">
                   <svg class="w-4 h-4 text-brand-cyan flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                  <span>Передняя оптика + туманки (броня)</span>
+                  <span>Передняя оптика + противотуманки</span>
                 </li>
                 <li class="flex items-center gap-2">
                   <svg class="w-4 h-4 text-brand-cyan flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                  <span>Корпуса зеркал, стойки лобового, полоса крыши</span>
+                  <span>Зеркала, стойки лобового, полоса крыши</span>
                 </li>
                 <li class="flex items-center gap-2">
                   <svg class="w-4 h-4 text-brand-cyan flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                  <span>Зоны под дверными ручками + погрузка багажника</span>
+                  <span>Зоны под дверными ручками + погрузочная зона</span>
                 </li>
               </ul>
 
@@ -315,8 +333,8 @@ HTML_CONTENT = """<!DOCTYPE html>
                   <div class="text-xs font-bold text-emerald-400">Антидождь на лобовое стекло</div>
                 </div>
                 <div class="text-right">
-                  <div class="text-[10px] text-gray-400">Срок работы:</div>
-                  <div class="text-xs font-semibold text-white">1–2 дня</div>
+                  <div class="text-[10px] text-gray-400">Срок оклейки:</div>
+                  <div class="text-xs font-semibold text-white">1–2 рабочих дня</div>
                 </div>
               </div>
 
@@ -334,7 +352,7 @@ HTML_CONTENT = """<!DOCTYPE html>
     </section>
 
     <!-- =========================================================================
-         4. TRUST & NUMBERS TICKER
+         3. TRUST & NUMBERS TICKER
          ========================================================================= -->
     <section class="border-y border-brand-border/60 bg-brand-surface/60 py-8 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -345,7 +363,7 @@ HTML_CONTENT = """<!DOCTYPE html>
               <span class="text-brand-cyan">до 7</span> лет
             </div>
             <div class="text-xs text-gray-400 font-medium uppercase tracking-wider">Гарантия на полиуретан</div>
-            <div class="text-[11px] text-gray-500 mt-1">Официальный акт и договор</div>
+            <div class="text-[11px] text-gray-500 mt-1">Официальный договор и акт</div>
           </div>
 
           <div class="p-3 border-l border-brand-border/60">
@@ -361,7 +379,7 @@ HTML_CONTENT = """<!DOCTYPE html>
               <span class="text-amber-400">5.0</span>
             </div>
             <div class="text-xs text-gray-400 font-medium uppercase tracking-wider">Рейтинг Яндекс Карты</div>
-            <div class="text-[11px] text-gray-500 mt-1">Реальные отзывы жителей КМВ</div>
+            <div class="text-[11px] text-gray-500 mt-1">Реальные отзывы автовладельцев</div>
           </div>
 
           <div class="p-3 border-l border-brand-border/60">
@@ -369,7 +387,7 @@ HTML_CONTENT = """<!DOCTYPE html>
               <span class="text-brand-cyan">215</span> мкм
             </div>
             <div class="text-xs text-gray-400 font-medium uppercase tracking-wider">Толщина брони PPF</div>
-            <div class="text-[11px] text-gray-500 mt-1">Не пробивает даже щебень</div>
+            <div class="text-[11px] text-gray-500 mt-1">Поглощает энергию щебня</div>
           </div>
 
         </div>
@@ -377,63 +395,169 @@ HTML_CONTENT = """<!DOCTYPE html>
     </section>
 
     <!-- =========================================================================
-         5. INTERACTIVE BEFORE / AFTER SLIDER
+         4. REAL PPF PROTECTION & SELF-HEALING TEST (EXACT, HONEST, TECHNICAL)
          ========================================================================= -->
-    <section class="py-16 sm:py-24 bg-brand-dark relative overflow-hidden">
+    <section id="why-ppf" class="py-16 sm:py-24 bg-brand-dark relative overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="text-center max-w-3xl mx-auto mb-12">
-          <div class="text-xs font-heading font-bold uppercase tracking-widest text-brand-cyan mb-3">Технологическое превосходство</div>
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <div class="text-xs font-heading font-bold uppercase tracking-widest text-brand-cyan mb-3">Технический факт-чек</div>
           <h2 class="text-2xl sm:text-4xl font-heading font-extrabold text-white mb-4">
-            Взгляните на разницу: с плёнкой и без защиты
+            Почему полиуретан PPF 215 мкм окупает себя в первый же сезон
           </h2>
           <p class="text-sm sm:text-base text-gray-400">
-            Потяните ползунок в центре: слева кузов после 2 лет без защиты (пескоструй, сколы до металла), справа — кузов под премиальным полиуретаном PPF с самовосстанавливающимся слоем Top Coat.
+            Посмотрите, что происходит с кузовом автомобиля при реальной эксплуатации на трассах Ставропольского края и КМВ:
           </p>
         </div>
 
-        <!-- Before/After Interactive Component -->
-        <div class="max-w-4xl mx-auto relative rounded-2xl overflow-hidden border border-brand-border shadow-2xl select-none aspect-video bg-black" id="comparison-container">
-          <!-- "After" Image (Underneath, full view) -->
-          <img 
-            src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1400&q=80" 
-            alt="После оклейки полиуретаном: зеркальный глянец" 
-            class="absolute inset-0 w-full h-full object-cover pointer-events-none"
-          >
-          <div class="absolute bottom-4 right-4 bg-emerald-500/90 text-black px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider backdrop-blur-sm pointer-events-none">
-            После: Полиуретан PPF 215 мкм (Глянец & Защита)
-          </div>
+        <!-- 4 Detailed Real Comparison Blocks -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          
+          <!-- Card 1: БЕЗ ЗАЩИТЫ (Заводской лак 100-120 мкм) -->
+          <div class="bg-gradient-to-b from-red-950/20 to-brand-card border border-red-500/30 rounded-2xl p-6 sm:p-8 flex flex-col justify-between relative shadow-xl">
+            <div class="absolute -top-3.5 left-6 px-3.5 py-1 rounded-full bg-red-600 text-white font-heading font-extrabold text-[11px] uppercase tracking-wider">
+              Без защитной плёнки
+            </div>
 
-          <!-- "Before" Image (Clipped by slider width) -->
-          <div class="absolute inset-y-0 left-0 overflow-hidden w-1/2 pointer-events-none" id="before-image-wrap">
-            <img 
-              src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1400&q=80" 
-              alt="До оклейки: уязвимый кузов" 
-              class="absolute inset-0 w-full h-full object-cover max-w-none"
-              id="before-image"
-            >
-            <div class="absolute bottom-4 left-4 bg-red-600/90 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider backdrop-blur-sm pointer-events-none">
-              До: Без плёнки (Риск сколов и паутины)
+            <div>
+              <div class="text-xl sm:text-2xl font-heading font-bold text-white mb-4 mt-2">
+                Уязвимый заводской лак
+              </div>
+              
+              <div class="space-y-4 text-xs sm:text-sm text-gray-300">
+                <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-surface/60 border border-white/5">
+                  <div class="text-red-400 font-bold text-base mt-0.5">✕</div>
+                  <div>
+                    <strong class="text-white block mb-0.5">Гравий и сколы до металла</strong>
+                    Обычный заводской лак имеет толщину всего 100–120 мкм. Камень с трассы скалывает его до грунта, вызывая ржавчину уже через одну зиму.
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-surface/60 border border-white/5">
+                  <div class="text-red-400 font-bold text-base mt-0.5">✕</div>
+                  <div>
+                    <strong class="text-white block mb-0.5">«Паутина» от бесконтактных моек и песка</strong>
+                    Тряпки на мойках, дорожная пыль и ветки создают круговые царапины (голограммы). Машина теряет блеск за 4–6 месяцев.
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-surface/60 border border-white/5">
+                  <div class="text-red-400 font-bold text-base mt-0.5">✕</div>
+                  <div>
+                    <strong class="text-white block mb-0.5">Потеря стоимости автомобиля при продаже</strong>
+                    При перекраске капота и бампера толщиномер показывает 250–350 мкм. Покупатели сбивают цену на 150 000 – 300 000 ₽.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-red-500/20 text-xs text-red-300/80 font-medium">
+              Итог: регулярный перекрас деталей и потеря рыночной ликвидности.
             </div>
           </div>
 
-          <!-- Vertical Divider Bar -->
-          <div class="absolute inset-y-0 w-1 bg-brand-cyan cursor-ew-resize before-after-handle" id="slider-handle" style="left: 50%;">
-            <div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-brand-cyan text-black flex items-center justify-center font-bold text-sm shadow-xl border-2 border-white">
-              ⇄
+          <!-- Card 2: ПОД ПОЛИУРЕТАНОМ PPF 215 МКМ С TOP COAT -->
+          <div class="bg-gradient-to-b from-brand-cyan/10 to-brand-card border border-brand-cyan/40 rounded-2xl p-6 sm:p-8 flex flex-col justify-between relative shadow-[0_0_30px_rgba(0,240,255,0.1)]">
+            <div class="absolute -top-3.5 left-6 px-3.5 py-1 rounded-full bg-brand-cyan text-black font-heading font-extrabold text-[11px] uppercase tracking-wider">
+              Под полиуретаном PPF (Авто Графикс)
+            </div>
+
+            <div>
+              <div class="text-xl sm:text-2xl font-heading font-bold text-white mb-4 mt-2">
+                Броня толщиной 215 мкм + Top Coat
+              </div>
+              
+              <div class="space-y-4 text-xs sm:text-sm text-gray-300">
+                <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-surface/60 border border-brand-cyan/20">
+                  <div class="text-brand-cyan font-bold text-base mt-0.5">✓</div>
+                  <div>
+                    <strong class="text-white block mb-0.5">Эластичный полимер гасит удары щебня</strong>
+                    Полиуретан поглощает кинетическую энергию камней на скорости до 140 км/ч. Скол не достает до родного лакокрасочного покрытия.
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-surface/60 border border-brand-cyan/20">
+                  <div class="text-brand-cyan font-bold text-base mt-0.5">✓</div>
+                  <div>
+                    <strong class="text-white block mb-0.5">Самозаживление царапин при нагреве от 35°C</strong>
+                    Верхний эластомерный слой Top Coat сам затягивает микроцарапины при поливании горячей водой или прогреве на солнце.
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-surface/60 border border-brand-cyan/20">
+                  <div class="text-brand-cyan font-bold text-base mt-0.5">✓</div>
+                  <div>
+                    <strong class="text-white block mb-0.5">Сохранение 100% родного окраса</strong>
+                    Через 3–5 лет пленка снимается без следов клея. Кузов остается новым, как в день выдачи из автосалона.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-brand-cyan/20 text-xs text-brand-cyan font-semibold flex items-center justify-between">
+              <span>Итог: максимальная рыночная цена при продаже авто</span>
+              <span>Гарантия до 7 лет</span>
             </div>
           </div>
+
         </div>
 
-        <div class="text-center mt-6 text-xs text-gray-500">
-          💡 Перемещайте разделитель пальцем на телефоне или курсором мыши
+        <!-- Interactive Self-Healing Top Coat Simulator Widget -->
+        <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 sm:p-8 max-w-4xl mx-auto">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+            
+            <div class="flex-1 text-center md:text-left">
+              <div class="text-xs font-bold text-brand-cyan uppercase tracking-wider mb-1">
+                Интерактивная демонстрация Top Coat
+              </div>
+              <h3 class="text-lg sm:text-xl font-heading font-bold text-white mb-2">
+                Как работает тепловое самозатягивание царапин?
+              </h3>
+              <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                Нажмите кнопку справа: имитация воздействия солнечного тепла или теплой воды (40°C) на эластомерную плёнку PPF.
+              </p>
+              <div class="inline-flex items-center gap-2 text-xs text-emerald-400 font-medium">
+                <span>✓ Затягивает следы от жестких щеток, веток и ногтей</span>
+              </div>
+            </div>
+
+            <!-- Visual Surface Simulator Box -->
+            <div class="flex flex-col items-center gap-3 w-full md:w-auto">
+              <div class="w-64 h-32 rounded-xl bg-gradient-to-tr from-gray-950 via-gray-900 to-black border-2 border-brand-border relative overflow-hidden flex items-center justify-center shadow-inner" id="sim-box">
+                <!-- Glossy highlight line -->
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12 pointer-events-none"></div>
+                
+                <!-- Simulated Scratches SVG -->
+                <svg id="scratch-svg" class="w-48 h-20 text-red-400/90 filter drop-shadow transition-all" viewBox="0 0 200 80" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 20 Q 50 40, 100 25 T 190 35" stroke-dasharray="4,2"/>
+                  <path d="M25 50 Q 80 65, 130 45 T 180 60" stroke-width="1.5"/>
+                  <path d="M60 15 Q 110 30, 160 20" stroke-width="1"/>
+                </svg>
+
+                <!-- Status Badge on Simulator -->
+                <div id="sim-badge" class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-red-600/80 text-white text-[10px] font-bold">
+                  Царапины на лаке
+                </div>
+              </div>
+
+              <!-- Action Button to Trigger Heat -->
+              <button 
+                onclick="simulateTopCoatHealing()" 
+                id="heal-btn"
+                class="w-64 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-brand-cyan text-black font-heading font-bold text-xs uppercase tracking-wider hover:brightness-110 transition-all cursor-pointer shadow-lg"
+              >
+                🔥 Подать тепло (40°C)
+              </button>
+            </div>
+
+          </div>
         </div>
 
       </div>
     </section>
 
     <!-- =========================================================================
-         6. INTERACTIVE 3-STEP QUIZ CALCULATOR WITH BONUS
+         5. INTERACTIVE 3-STEP QUIZ CALCULATOR WITH BONUS
          ========================================================================= -->
     <section id="calculator" class="py-16 sm:py-24 bg-brand-surface relative border-t border-brand-border/60">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -516,7 +640,7 @@ HTML_CONTENT = """<!DOCTYPE html>
                   <span class="font-heading font-bold text-white group-hover:text-brand-cyan">Комплекс «Зоны риска»</span>
                   <span class="radio-indicator text-brand-cyan">●</span>
                 </div>
-                <div class="text-xs text-gray-400">Капот, передний бампер, оптика, зеркала, стойки лобового, полоса на крышу</div>
+                <div class="text-xs text-gray-400">Капот целиком, бампер, оптика, зеркала, стойки лобового, полоса на крышу</div>
               </label>
 
               <label class="quiz-option cursor-pointer p-4 rounded-xl border border-brand-border bg-brand-surface hover:border-brand-cyan/60 transition-all group">
@@ -534,7 +658,7 @@ HTML_CONTENT = """<!DOCTYPE html>
                   <span class="font-heading font-bold text-white group-hover:text-brand-cyan">Смена цвета (Цветной винил / сатин)</span>
                   <span class="radio-indicator text-brand-cyan"></span>
                 </div>
-                <div class="text-xs text-gray-400">Полный стайлинг кузова, матовый, сатин или суперглянец</div>
+                <div class="text-xs text-gray-400">Полный стайлинг кузова: матовый, сатин или глубокий суперглянец</div>
               </label>
 
               <label class="quiz-option cursor-pointer p-4 rounded-xl border border-brand-border bg-brand-surface hover:border-brand-cyan/60 transition-all group">
@@ -543,7 +667,7 @@ HTML_CONTENT = """<!DOCTYPE html>
                   <span class="font-heading font-bold text-white group-hover:text-brand-cyan">Антихром Shadow Line + Фары</span>
                   <span class="radio-indicator text-brand-cyan"></span>
                 </div>
-                <div class="text-xs text-gray-400">Оклейка молдингов, решетки радиатора, шильдиков и притемнение фар</div>
+                <div class="text-xs text-gray-400">Оклейка молдингов, решетки радиатора, шильдиков и притемнение оптики</div>
               </label>
 
             </div>
@@ -575,7 +699,7 @@ HTML_CONTENT = """<!DOCTYPE html>
 
               <label class="cursor-pointer p-3.5 rounded-xl border border-brand-cyan/30 bg-brand-cyan/10 flex items-center justify-between">
                 <div>
-                  <div class="text-xs font-bold text-brand-cyan">🎁 Гидрофоб «Антидождь» на все стекла</div>
+                  <div class="text-xs font-bold text-brand-cyan">🎁 Гидрофоб «Антидождь» на стекла</div>
                   <div class="text-[11px] text-gray-400">Стойкость до 12 месяцев (экономия 5 000 ₽)</div>
                 </div>
                 <input type="radio" name="gift" value="Антидождь на стекла" class="accent-brand-cyan w-4 h-4">
@@ -662,7 +786,7 @@ HTML_CONTENT = """<!DOCTYPE html>
     </section>
 
     <!-- =========================================================================
-         7. SERVICES & PACKAGES (TABBED WITH MOBILE SWIPE)
+         6. SERVICES & PACKAGES (TABBED WITH MOBILE SWIPE)
          ========================================================================= -->
     <section id="services" class="py-16 sm:py-24 bg-brand-dark">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -741,7 +865,7 @@ HTML_CONTENT = """<!DOCTYPE html>
               </div>
               <h3 class="text-xl font-heading font-bold text-white mb-2">Полная броня кузова (PPF 360°)</h3>
               <p class="text-xs text-gray-400 mb-4 leading-relaxed">
-                Тотальная защита всего заводского лака премиальным полиуретаном 200 мкм. Автомобиль сохраняет салонный вид на долгие годы.
+                Тотальная защита всего заводского лака оригинальным полиуретаном 200–215 мкм. Автомобиль сохраняет салонный вид на долгие годы.
               </p>
               <ul class="text-xs text-gray-300 space-y-2 mb-6">
                 <li class="flex items-center gap-2">✓ 100% элементов кузова в пленке</li>
@@ -769,7 +893,7 @@ HTML_CONTENT = """<!DOCTYPE html>
               </div>
               <h3 class="text-xl font-heading font-bold text-white mb-2">Бронирование интерьера салона</h3>
               <p class="text-xs text-gray-400 mb-4 leading-relaxed">
-                Защита экранов мультимедиа, цифровой приборной панели, глянцевого черного пластика (Piano Black) от царапин ногтями и ключами.
+                Защита экранов мультимедиа, цифровой приборной панели, рояльного пластика (Piano Black) от царапин ногтями и ключами.
               </p>
               <ul class="text-xs text-gray-300 space-y-2 mb-6">
                 <li class="flex items-center gap-2">✓ Плоттерный раскрой по лекалам</li>
@@ -879,7 +1003,7 @@ HTML_CONTENT = """<!DOCTYPE html>
     </section>
 
     <!-- =========================================================================
-         8. 4 AUDIENCE PERSONAS & SCENARIOS
+         7. 4 AUDIENCE PERSONAS & SCENARIOS
          ========================================================================= -->
     <section class="py-16 sm:py-24 bg-brand-surface border-t border-brand-border/60">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -919,7 +1043,7 @@ HTML_CONTENT = """<!DOCTYPE html>
                 Трасса «Кавказ», поездки в горы (Домбай, Эльбрус, Архыз) — гравий, битум и мошкара разрушают переднюю часть авто за один сезон. Полиуретан 215 мкм берет удар на себя.
               </p>
             </div>
-            <div class="text-[11px] font-semibold text-emerald-400">Решение: Усиленная броня передней части + фары</div>
+            <div class="text-[11px] font-semibold text-emerald-400">Решение: Усиленная броня переда + фары</div>
           </div>
 
           <div class="bg-brand-card border border-brand-border/80 rounded-2xl p-6 relative flex flex-col justify-between">
@@ -954,7 +1078,7 @@ HTML_CONTENT = """<!DOCTYPE html>
     </section>
 
     <!-- =========================================================================
-         9. GALLERY / PORTFOLIO WITH MOBILE SWIPE
+         8. GALLERY / PORTFOLIO WITH MOBILE SWIPE
          ========================================================================= -->
     <section id="portfolio" class="py-16 sm:py-24 bg-brand-dark">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1026,13 +1150,13 @@ HTML_CONTENT = """<!DOCTYPE html>
     </section>
 
     <!-- =========================================================================
-         10. WORKFLOW / PROCESS STEPS
+         9. WORKFLOW / PROCESS STEPS
          ========================================================================= -->
-    <section id="advantages" class="py-16 sm:py-24 bg-brand-surface border-t border-brand-border/60">
+    <section class="py-16 sm:py-24 bg-brand-surface border-t border-brand-border/60">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="text-center max-w-3xl mx-auto mb-14">
-          <div class="text-xs font-heading font-bold uppercase tracking-widest text-brand-cyan mb-2">Стандарты качества</div>
+          <div class="text-xs font-heading font-bold uppercase tracking-widest text-brand-cyan mb-2">Стандарты студии</div>
           <h2 class="text-2xl sm:text-4xl font-heading font-extrabold text-white mb-3">
             Как мы оклеиваем ваш автомобиль
           </h2>
@@ -1045,7 +1169,7 @@ HTML_CONTENT = """<!DOCTYPE html>
           
           <div class="bg-brand-card border border-brand-border p-5 rounded-xl relative">
             <div class="text-2xl font-heading font-extrabold text-brand-cyan/40 mb-2">01</div>
-            <h3 class="text-sm font-heading font-bold text-white mb-1">3-этапный детейлинг-деконтаминейшн</h3>
+            <h3 class="text-sm font-heading font-bold text-white mb-1">Детейлинг-деконтаминейшн</h3>
             <p class="text-[11px] text-gray-400">Деликатная мойка, удаление битума, металлических вкраплений и очистка глиной.</p>
           </div>
 
@@ -1070,7 +1194,7 @@ HTML_CONTENT = """<!DOCTYPE html>
           <div class="bg-brand-card border border-brand-border p-5 rounded-xl relative">
             <div class="text-2xl font-heading font-extrabold text-brand-cyan/40 mb-2">05</div>
             <h3 class="text-sm font-heading font-bold text-white mb-1">Контроль через 14 дней</h3>
-            <p class="text-[11px] text-gray-400">Бесплатный контрольный осмотр и мойка после окончательной полимеризации клеевого слоя.</p>
+            <p class="text-[11px] text-gray-400">Бесплатный контрольный осмотр и мойка после окончательной полимеризации клея.</p>
           </div>
 
         </div>
@@ -1079,7 +1203,7 @@ HTML_CONTENT = """<!DOCTYPE html>
     </section>
 
     <!-- =========================================================================
-         11. REVIEWS SECTION (YANDEX MAPS 5.0)
+         10. REVIEWS SECTION (YANDEX MAPS 5.0)
          ========================================================================= -->
     <section id="reviews" class="py-16 sm:py-24 bg-brand-dark border-t border-brand-border/60">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1187,7 +1311,7 @@ HTML_CONTENT = """<!DOCTYPE html>
     </section>
 
     <!-- =========================================================================
-         12. FAQ ACCORDION
+         11. FAQ ACCORDION
          ========================================================================= -->
     <section class="py-16 sm:py-24 bg-brand-surface border-t border-brand-border/60">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1220,7 +1344,7 @@ HTML_CONTENT = """<!DOCTYPE html>
               <span class="faq-icon text-brand-cyan text-lg transition-transform">+</span>
             </button>
             <div class="faq-content hidden px-5 pb-5 text-xs sm:text-sm text-gray-400 leading-relaxed border-t border-brand-border/40 pt-3">
-              Премиальные пленки (Stek, SunTek, Llumar) обладают эластичным термоактивным слоем (Self-Healing Top Coat). Мелкие царапины от веток, песка или тряпок мойщиков затягиваются сами при нагревании на солнце или поливании теплой водой (от 40°C).
+              Премиальные пленки (Stek, SunTek, Llumar) обладают эластичным термоактивным слоем (Self-Healing Top Coat). Мелкие царапины от веток, песка или тряпок мойщиков затягиваются сами при нагревании на солнце или поливании теплой водой (от 35-40°C).
             </div>
           </div>
 
@@ -1250,7 +1374,7 @@ HTML_CONTENT = """<!DOCTYPE html>
     </section>
 
     <!-- =========================================================================
-         13. CONTACTS & EXACT GEO MAP (ERMOLOVA 12A, STR. 5)
+         12. CONTACTS & EXACT GEO MAP (ERMOLOVA 12A, STR. 5)
          ========================================================================= -->
     <section id="contacts" class="py-16 sm:py-24 bg-brand-dark border-t border-brand-border/60">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1297,7 +1421,7 @@ HTML_CONTENT = """<!DOCTYPE html>
                   <a href="tel:+79286519252" class="text-brand-cyan font-bold text-base hover:underline">
                     +7 (928) 651-92-52
                   </a>
-                  <div class="text-[11px] text-gray-500 mt-0.5">Звоните или пишите в мессенджеры</div>
+                  <div class="text-[11px] text-gray-500 mt-0.5">Звоните или пишите в WhatsApp</div>
                 </div>
               </div>
 
@@ -1362,7 +1486,7 @@ HTML_CONTENT = """<!DOCTYPE html>
   </main>
 
   <!-- =========================================================================
-       14. LEGAL COMPLIANCE FOOTER (152-FZ & VLADISLAND.STUDIO)
+       13. LEGAL COMPLIANCE FOOTER (152-FZ & VLADISLAND.STUDIO)
        ========================================================================= -->
   <footer class="bg-[#080a0d] text-white py-12 px-4 sm:px-6 lg:px-8 border-t border-brand-border/60 text-center text-xs">
     <div class="max-w-5xl mx-auto flex flex-col items-center gap-4">
@@ -1411,7 +1535,7 @@ HTML_CONTENT = """<!DOCTYPE html>
   </footer>
 
   <!-- =========================================================================
-       15. FLOATING BOTTOM QUICK ACTIONS ON MOBILE
+       14. FLOATING BOTTOM QUICK ACTIONS ON MOBILE
        ========================================================================= -->
   <div class="fixed bottom-0 inset-x-0 z-40 bg-brand-dark/95 backdrop-blur-md border-t border-brand-border p-3 flex sm:hidden items-center justify-between gap-3 shadow-2xl">
     <a 
@@ -1437,7 +1561,7 @@ HTML_CONTENT = """<!DOCTYPE html>
   </div>
 
   <!-- =========================================================================
-       16. COOKIE CONSENT BANNER (152-FZ)
+       15. COOKIE CONSENT BANNER (152-FZ)
        ========================================================================= -->
   <aside 
     id="cookie-banner" 
@@ -1466,7 +1590,7 @@ HTML_CONTENT = """<!DOCTYPE html>
   </aside>
 
   <!-- =========================================================================
-       17. MODAL: BOOKING & QUICK CONSULTATION
+       16. MODAL: BOOKING & QUICK CONSULTATION
        ========================================================================= -->
   <div id="booking-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
     <div class="bg-brand-card border border-brand-border rounded-2xl max-w-md w-full p-6 sm:p-8 relative shadow-2xl max-h-[90vh] overflow-y-auto">
@@ -1552,7 +1676,7 @@ HTML_CONTENT = """<!DOCTYPE html>
   </div>
 
   <!-- =========================================================================
-       18. MODAL: LEGAL DOCUMENTS (152-FZ, TERMS, COOKIE)
+       17. MODAL: LEGAL DOCUMENTS (152-FZ, TERMS, COOKIE)
        ========================================================================= -->
   <div id="legal-modal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
     <div class="bg-brand-card border border-brand-border rounded-2xl max-w-2xl w-full p-6 sm:p-8 relative shadow-2xl max-h-[85vh] flex flex-col">
@@ -1578,7 +1702,7 @@ HTML_CONTENT = """<!DOCTYPE html>
   </div>
 
   <!-- =========================================================================
-       19. JAVASCRIPT LOGIC (VANILLA JS)
+       18. JAVASCRIPT LOGIC (VANILLA JS)
        ========================================================================= -->
   <script>
     // 1. Phone input mask: +7 (XXX) XXX-XX-XX
@@ -1612,53 +1736,40 @@ HTML_CONTENT = """<!DOCTYPE html>
       }
     }
 
-    // 4. Interactive Before/After Slider Drag Logic
-    const compContainer = document.getElementById('comparison-container');
-    const beforeWrap = document.getElementById('before-image-wrap');
-    const beforeImg = document.getElementById('before-image');
-    const sliderHandle = document.getElementById('slider-handle');
+    // 4. Interactive Self-Healing Top Coat Simulator
+    function simulateTopCoatHealing() {
+      const svg = document.getElementById('scratch-svg');
+      const badge = document.getElementById('sim-badge');
+      const btn = document.getElementById('heal-btn');
+      if (!svg || !badge || !btn) return;
 
-    function syncImageWidth() {
-      if (compContainer && beforeImg) {
-        beforeImg.style.width = compContainer.offsetWidth + 'px';
-      }
-    }
-    window.addEventListener('resize', syncImageWidth);
-    window.addEventListener('DOMContentLoaded', syncImageWidth);
+      btn.disabled = true;
+      btn.innerText = '⏳ Идёт нагрев (40°C)...';
+      badge.className = 'absolute bottom-2 right-2 px-2 py-0.5 rounded bg-amber-500 text-black text-[10px] font-bold animate-pulse';
+      badge.innerText = 'Процесс затягивания...';
 
-    let isDragging = false;
-    function setSliderPosition(x) {
-      if (!compContainer || !beforeWrap || !sliderHandle) return;
-      const rect = compContainer.getBoundingClientRect();
-      let pos = (x - rect.left) / rect.width;
-      if (pos < 0.05) pos = 0.05;
-      if (pos > 0.95) pos = 0.95;
-      const pct = pos * 100;
-      beforeWrap.style.width = pct + '%';
-      sliderHandle.style.left = pct + '%';
+      svg.classList.add('scratch-healing');
+
+      setTimeout(() => {
+        badge.className = 'absolute bottom-2 right-2 px-2 py-0.5 rounded bg-emerald-500 text-black text-[10px] font-bold';
+        badge.innerText = '✓ Царапины затянулись (100% глянец)';
+        btn.innerText = '↺ Поцарапать снова для теста';
+        btn.disabled = false;
+        btn.onclick = resetHealingSimulator;
+      }, 2500);
     }
 
-    if (compContainer) {
-      compContainer.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        setSliderPosition(e.clientX);
-      });
-      window.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        setSliderPosition(e.clientX);
-      });
-      window.addEventListener('mouseup', () => { isDragging = false; });
+    function resetHealingSimulator() {
+      const svg = document.getElementById('scratch-svg');
+      const badge = document.getElementById('sim-badge');
+      const btn = document.getElementById('heal-btn');
+      if (!svg || !badge || !btn) return;
 
-      // Touch events for mobile phones
-      compContainer.addEventListener('touchstart', (e) => {
-        isDragging = true;
-        if (e.touches[0]) setSliderPosition(e.touches[0].clientX);
-      }, { passive: true });
-      window.addEventListener('touchmove', (e) => {
-        if (!isDragging) return;
-        if (e.touches[0]) setSliderPosition(e.touches[0].clientX);
-      }, { passive: true });
-      window.addEventListener('touchend', () => { isDragging = false; });
+      svg.classList.remove('scratch-healing');
+      badge.className = 'absolute bottom-2 right-2 px-2 py-0.5 rounded bg-red-600/80 text-white text-[10px] font-bold';
+      badge.innerText = 'Царапины на лаке';
+      btn.innerText = '🔥 Подать тепло (40°C)';
+      btn.onclick = simulateTopCoatHealing;
     }
 
     // 5. Interactive Quiz State & Navigation
@@ -1867,4 +1978,4 @@ import os
 with open("autographics/index.html", "w", encoding="utf-8") as f:
     f.write(HTML_CONTENT.strip())
 
-print("✅ Файл autographics/index.html успешно сгенерирован!")
+print("✅ Файл autographics/index.html успешно обновлен!")
