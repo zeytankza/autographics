@@ -3,6 +3,7 @@
 Anti-Slop Production Generator for Auto Graphics Detailing Studio (Pyatigorsk)
 Web Agency Standard 2.0 & Architectural Editorial Aesthetic
 100% Local Real Photos, Zero AI Slop, WCAG AAA Contrast, 152-FZ Legal Compliance
+With Desktop Navigation Arrows, Clean Validation, and OpenGraph metadata
 """
 
 import os
@@ -17,6 +18,13 @@ HTML_TEMPLATE = r'''<!DOCTYPE html>
   <meta name="description" content="Премиальная оклейка полиуретановыми плёнками PPF 215 мкм, бронирование зон риска, смена цвета и детейлинг в Пятигорске. 1 место на фестивале «Автошок». Гарантия до 7 лет. ул. Ермолова 12А, стр. 5. Телефон: +7 (928) 651-92-52">
   <meta name="theme-color" content="#090b0e">
   
+  <!-- Open Graph / Telegram / WhatsApp Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zeytankza.github.io/autographics/">
+  <meta property="og:title" content="Детейлинг-центр «Авто Графикс» Пятигорск — Оклейка PPF, автовинил">
+  <meta property="og:description" content="Премиальная оклейка полиуретаном PPF 215 мкм, бронирование зон риска, смена цвета. 1 место на фестивале «Автошок». Гарантия 7 лет. ул. Ермолова 12А, стр. 5. Телефон: +7 (928) 651-92-52">
+  <meta property="og:image" content="https://zeytankza.github.io/autographics/assets/optimized/photo_18.jpg">
+
   <!-- Favicon: Official Auto Graphics Logo -->
   <link rel="icon" type="image/jpeg" href="assets/optimized/photo_12.jpg">
 
@@ -87,6 +95,11 @@ HTML_TEMPLATE = r'''<!DOCTYPE html>
     }
     .arch-border-crimson {
       border: 1px solid rgba(225, 29, 72, 0.35);
+    }
+    /* Leaflet Attribution Flag strictly removed per RF Law */
+    .leaflet-control-attribution, .leaflet-attribution-flag {
+      display: none !important;
+      visibility: hidden !important;
     }
   </style>
 
@@ -640,25 +653,47 @@ HTML_TEMPLATE = r'''<!DOCTYPE html>
     </section>
 
     <!-- =========================================================================
-         6. SERVICES CATALOG (3 TABS WITH REAL STUDIO PHOTOS & MOBILE SWIPE)
+         6. SERVICES CATALOG (3 TABS WITH DESKTOP ARROWS & MOBILE PEEK SWIPE)
          ========================================================================= -->
     <section id="services" class="py-16 sm:py-24 bg-brand-dark border-b border-brand-border">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12">
           <div>
             <div class="text-xs font-heading font-bold uppercase tracking-widest text-brand-crimson mb-2">Каталог студии</div>
             <h2 class="text-2xl sm:text-4xl font-heading font-extrabold text-white">
               Услуги «Авто Графикс» в Пятигорске
             </h2>
+            <div class="sm:hidden text-[11px] text-slate-400 flex items-center gap-1.5 mt-2">
+              <span>Листайте карточки влево-вправо</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-brand-crimson"></i>
+            </div>
           </div>
-          <p class="text-xs sm:text-sm text-slate-400 max-w-md mt-3 md:mt-0">
-            Используем только проверенные брендовые пленки и автохимию. Никакого дешевого перемаркированного гибрида.
-          </p>
+          
+          <!-- Compactness Standard Desktop Navigation Arrows -->
+          <div class="hidden sm:flex items-center gap-3 mt-4 md:mt-0">
+            <span class="text-xs text-slate-400">Листайте варианты:</span>
+            <div class="flex items-center gap-2">
+              <button 
+                onclick="scrollCarousel('services-grid', -1)" 
+                class="w-10 h-10 rounded-full bg-brand-surface arch-border text-slate-300 hover:text-white hover:border-brand-crimson flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
+                aria-label="Предыдущие услуги"
+              >
+                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+              </button>
+              <button 
+                onclick="scrollCarousel('services-grid', 1)" 
+                class="w-10 h-10 rounded-full bg-brand-surface arch-border text-slate-300 hover:text-white hover:border-brand-crimson flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
+                aria-label="Следующие услуги"
+              >
+                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+              </button>
+            </div>
+          </div>
         </div>
 
         <!-- Service Category Tabs -->
-        <div class="flex items-center gap-2 sm:gap-3 overflow-x-auto scrollbar-none pb-4 mb-8">
+        <div class="flex items-center gap-2 sm:gap-3 overflow-x-auto scrollbar-none pb-3 mb-8">
           <button onclick="filterServices('ppf')" id="tab-ppf" class="service-tab-btn px-4 sm:px-5 py-2.5 rounded-xl font-heading font-bold text-xs sm:text-sm tracking-wide bg-brand-crimson text-white whitespace-nowrap transition-all shadow-sm">
             Антигравийная защита (PPF)
           </button>
@@ -670,8 +705,8 @@ HTML_TEMPLATE = r'''<!DOCTYPE html>
           </button>
         </div>
 
-        <!-- Cards Container: Horizontal Swipe on Mobile (snap-x snap-mandatory) -->
-        <div class="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-none pb-4" id="services-grid">
+        <!-- Cards Container: Horizontal Swipe on Mobile (snap-x snap-mandatory) with peek -->
+        <div class="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-none pb-4 -mx-4 px-4 sm:mx-0 sm:px-0" id="services-grid">
           
           <!-- Card 1: Зоны Риска (PPF) -->
           <div class="service-card min-w-[290px] sm:min-w-0 snap-center bg-brand-surface arch-border rounded-2xl p-5 sm:p-6 flex flex-col justify-between transition-all group" data-category="ppf">
@@ -705,14 +740,14 @@ HTML_TEMPLATE = r'''<!DOCTYPE html>
             </div>
           </div>
 
-          <!-- Card 2: Полная броня кузова 360 (PPF) -->
+          <!-- Card 2: Полная броня кузова 360 (PPF) - 100% УНИКАЛЬНОЕ ФОТО photo_19.jpg -->
           <div class="service-card min-w-[290px] sm:min-w-0 snap-center bg-brand-surface arch-border-crimson rounded-2xl p-5 sm:p-6 flex flex-col justify-between transition-all group relative" data-category="ppf">
             <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-brand-crimson text-white font-heading font-extrabold text-[10px] uppercase tracking-wider">
               Максимальная защита 360°
             </div>
             <div>
               <div class="h-44 rounded-xl overflow-hidden mb-5 relative arch-border">
-                <img src="assets/optimized/photo_18.jpg" alt="Полная оклейка кузова Porsche Macan S полиуретаном" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <img src="assets/optimized/photo_19.jpg" alt="Полная броня кузова внедорожника полиуретаном в Авто Графикс" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 <div class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-emerald-500 text-black text-[11px] font-bold">
                   Гарантия 7 лет
                 </div>
@@ -1173,7 +1208,7 @@ HTML_TEMPLATE = r'''<!DOCTYPE html>
     </section>
 
     <!-- =========================================================================
-         9. HALL OF FAME: TROPHY & VERIFIED YANDEX REVIEWS 5.0
+         9. HALL OF FAME: TROPHY & VERIFIED YANDEX REVIEWS 5.0 (WITH ARROWS)
          ========================================================================= -->
     <section class="py-16 sm:py-24 bg-brand-surface border-b border-brand-border">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1214,8 +1249,8 @@ HTML_TEMPLATE = r'''<!DOCTYPE html>
           </div>
         </div>
 
-        <!-- Reviews Header -->
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+        <!-- Reviews Header with Compactness Arrows -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10">
           <div>
             <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-gold/10 border border-brand-gold/30 text-brand-gold text-xs font-bold mb-3">
               <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
@@ -1225,7 +1260,8 @@ HTML_TEMPLATE = r'''<!DOCTYPE html>
               Отзывы автовладельцев
             </h2>
           </div>
-          <div class="mt-4 md:mt-0">
+          
+          <div class="flex items-center gap-4 mt-4 md:mt-0">
             <a 
               href="https://yandex.ru/maps/org/avto_grafiks/222278901791/?indoorLevel=1&ll=43.026930%2C44.043891&z=17" 
               target="_blank" 
@@ -1235,11 +1271,29 @@ HTML_TEMPLATE = r'''<!DOCTYPE html>
               <span>Смотреть все отзывы на Яндекс Картах</span>
               <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
             </a>
+
+            <!-- Compactness Desktop Arrows for Reviews -->
+            <div class="hidden sm:flex items-center gap-2">
+              <button 
+                onclick="scrollCarousel('reviews-grid', -1)" 
+                class="w-9 h-9 rounded-full bg-brand-dark arch-border text-slate-300 hover:text-white hover:border-brand-crimson flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
+                aria-label="Предыдущие отзывы"
+              >
+                <i data-lucide="chevron-left" class="w-4 h-4"></i>
+              </button>
+              <button 
+                onclick="scrollCarousel('reviews-grid', 1)" 
+                class="w-9 h-9 rounded-full bg-brand-dark arch-border text-slate-300 hover:text-white hover:border-brand-crimson flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
+                aria-label="Следующие отзывы"
+              >
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </button>
+            </div>
           </div>
         </div>
 
-        <!-- Reviews Cards (Horizontal Swipe on Mobile) -->
-        <div class="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-none pb-4">
+        <!-- Reviews Cards: Horizontal Swipe on Mobile with peek -->
+        <div class="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-none pb-4 -mx-4 px-4 sm:mx-0 sm:px-0" id="reviews-grid">
           
           <div class="min-w-[280px] sm:min-w-0 snap-center bg-brand-dark arch-border rounded-2xl p-6 flex flex-col justify-between">
             <div>
@@ -1709,7 +1763,7 @@ HTML_TEMPLATE = r'''<!DOCTYPE html>
   </div>
 
   <!-- =========================================================================
-       16. VANILLA JAVASCRIPT LOGIC
+       16. VANILLA JAVASCRIPT LOGIC (WITH SCROLLCAROUSEL & STRICT 11-DIGIT VALIDATION)
        ========================================================================= -->
   <script>
     // 1. Phone input mask: +7 (XXX) XXX-XX-XX
@@ -1735,7 +1789,16 @@ HTML_TEMPLATE = r'''<!DOCTYPE html>
       }
     }
 
-    // 3. Mobile Menu Toggle
+    // 3. Compactness Standard: 5-Line Vanilla JS Carousel Navigation
+    function scrollCarousel(id, direction) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const card = el.querySelector('.snap-center') || el.firstElementChild;
+      const step = card ? card.offsetWidth + 24 : 340;
+      el.scrollBy({ left: direction * step, behavior: 'smooth' });
+    }
+
+    // 4. Mobile Menu Toggle
     function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
       if (menu) {
@@ -1743,7 +1806,7 @@ HTML_TEMPLATE = r'''<!DOCTYPE html>
       }
     }
 
-    // 4. Interactive Quiz State & Navigation
+    // 5. Interactive Quiz State & Navigation
     let currentQuizStep = 1;
     function goToStep(step) {
       document.getElementById('quiz-step-1').classList.add('hidden');
@@ -1797,9 +1860,19 @@ HTML_TEMPLATE = r'''<!DOCTYPE html>
       }
     }
 
+    // 6. Strict Form Submissions with 11-Digit Phone Validation
     function handleQuizSubmit(e) {
       e.preventDefault();
-      const phone = document.getElementById('quiz-phone').value;
+      const phoneInput = document.getElementById('quiz-phone');
+      const phone = phoneInput.value;
+      const cleanPhone = phone.replace(/\D/g, '');
+      
+      if (cleanPhone.length < 11) {
+        alert('Пожалуйста, введите корректный номер телефона полностью (11 цифр).');
+        phoneInput.focus();
+        return;
+      }
+
       const carModel = document.getElementById('quiz-car-model').value || 'Не указано';
       const carClass = document.querySelector('input[name="car_class"]:checked')?.value || '';
       const service = document.querySelector('input[name="service_type"]:checked')?.value || '';
@@ -1807,10 +1880,34 @@ HTML_TEMPLATE = r'''<!DOCTYPE html>
 
       alert(`Спасибо за заявку!\n\nАвтомобиль: ${carModel} (${carClass})\nУслуга: ${service}\nЗафиксированный подарок: ${gift}\nТелефон: ${phone}\n\nМастер студии «Авто Графикс» свяжется с вами в течение 10 минут!`);
       e.target.reset();
+      const submitBtn = document.getElementById('quiz-submit-btn');
+      if (submitBtn) submitBtn.disabled = true;
       goToStep(1);
     }
 
-    // 5. Services Filter Tabs
+    function handleBookingSubmit(e) {
+      e.preventDefault();
+      const phoneInput = document.getElementById('modal-phone');
+      const phone = phoneInput.value;
+      const cleanPhone = phone.replace(/\D/g, '');
+      
+      if (cleanPhone.length < 11) {
+        alert('Пожалуйста, введите корректный номер телефона полностью (11 цифр).');
+        phoneInput.focus();
+        return;
+      }
+
+      const name = document.getElementById('modal-name').value || 'Клиент';
+      const service = document.getElementById('modal-service').value;
+
+      alert(`Спасибо, ${name}! Ваша заявка на «${service}» принята.\nМастер студии перезвонит на номер ${phone} в течение 10 минут.`);
+      closeBookingModal();
+      e.target.reset();
+      const submitBtn = document.getElementById('modal-submit-btn');
+      if (submitBtn) submitBtn.disabled = true;
+    }
+
+    // 7. Services Filter Tabs
     function filterServices(category) {
       const tabs = document.querySelectorAll('.service-tab-btn');
       tabs.forEach(t => {
@@ -1833,7 +1930,7 @@ HTML_TEMPLATE = r'''<!DOCTYPE html>
       });
     }
 
-    // 6. Booking Modal
+    // 8. Booking Modal
     function openBookingModal(source) {
       const modal = document.getElementById('booking-modal');
       const srcInput = document.getElementById('modal-source');
@@ -1846,18 +1943,7 @@ HTML_TEMPLATE = r'''<!DOCTYPE html>
       if (modal) modal.classList.add('hidden');
     }
 
-    function handleBookingSubmit(e) {
-      e.preventDefault();
-      const name = document.getElementById('modal-name').value || 'Клиент';
-      const phone = document.getElementById('modal-phone').value;
-      const service = document.getElementById('modal-service').value;
-
-      alert(`Спасибо, ${name}! Ваша заявка на «${service}» принята.\nМастер студии перезвонит на номер ${phone} в течение 10 минут.`);
-      closeBookingModal();
-      e.target.reset();
-    }
-
-    // 7. Legal Documents Modal (152-FZ, Terms, Cookie)
+    // 9. Legal Documents Modal (152-FZ, Terms, Cookie)
     const legalTexts = {
       privacy: {
         title: 'Политика в отношении обработки персональных данных (152-ФЗ)',
@@ -1902,7 +1988,7 @@ HTML_TEMPLATE = r'''<!DOCTYPE html>
       if (modal) modal.classList.add('hidden');
     }
 
-    // 8. Cookie Consent Logic (localStorage)
+    // 10. Cookie Consent Logic (localStorage)
     document.addEventListener('DOMContentLoaded', () => {
       const isAccepted = localStorage.getItem('cookie_consent_accepted');
       if (!isAccepted) {
@@ -1943,8 +2029,7 @@ HTML_TEMPLATE = r'''<!DOCTYPE html>
         L.control.zoom({ position: 'topright' }).addTo(map);
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          maxZoom: 19,
-          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer" style="color:#64748b;">OpenStreetMap</a>'
+          maxZoom: 19
         }).addTo(map);
 
         const customPin = L.divIcon({
@@ -1983,7 +2068,7 @@ def build():
     output_path = os.path.join(os.path.dirname(__file__), "index.html")
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(HTML_TEMPLATE.strip())
-    print(f"✅ Успешно сгенерирован анти-нейрослоп сайт: {output_path} ({len(HTML_TEMPLATE)} байт)")
+    print(f"✅ Успешно сгенерирован обновленный сайт: {output_path} ({len(HTML_TEMPLATE)} байт)")
 
 if __name__ == "__main__":
     build()
