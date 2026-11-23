@@ -174,7 +174,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
           </a>
           <span class="text-[11px] text-slate-400 flex items-center justify-end gap-1.5">
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-            Пн–Сб 09:00–19:00
+            Пн–Пт 09:00–18:00, Сб 10:00–15:00
           </span>
         </div>
 
@@ -2005,7 +2005,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
                   <a href="tel:+79286519252" class="text-base font-bold text-white hover:text-brand-crimson transition-colors block mt-0.5">
                     +7 (928) 651-92-52
                   </a>
-                  <div class="text-xs text-slate-500 mt-0.5">Пн–Сб: 09:00 – 19:00, Вс: по предварительной записи</div>
+                  <div class="text-xs text-slate-500 mt-0.5">Пн–Пт: 09:00 – 18:00, Сб: 10:00 – 15:00, Вс: по записи</div>
                 </div>
               </div>
 
@@ -2032,7 +2032,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
             <!-- Fast Route Buttons (Yandex Maps / 2GIS Verified Geo) -->
             <div class="flex flex-col sm:flex-row gap-3 pt-2">
               <a 
-                href="https://yandex.ru/maps/?rtext=~44.0256,43.0384" 
+                href="https://yandex.ru/maps/?rtext=~44.043891,43.026931" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 class="flex-1 inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-brand-dark arch-border hover:border-brand-crimson text-white text-xs font-bold uppercase tracking-wider transition-colors text-center"
@@ -2042,7 +2042,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
               </a>
 
               <a 
-                href="https://2gis.ru/pyatigorsk/geo/44.0256,43.0384" 
+                href="https://2gis.ru/pyatigorsk/geo/44.043891,43.026931" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 class="flex-1 inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-brand-dark arch-border hover:border-brand-crimson text-white text-xs font-bold uppercase tracking-wider transition-colors text-center"
@@ -2069,7 +2069,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
                   г. Пятигорск, ул. Ермолова 12А, стр. 5
                 </p>
                 <div class="flex items-center justify-between text-[11px] text-slate-300 pt-2 border-t border-brand-border">
-                  <span>Координаты: 44.0256° N, 43.0384° E</span>
+                  <span>Координаты: 44.043891° N, 43.026931° E</span>
                   <span class="text-brand-crimson font-bold">Осмотр 0 ₽</span>
                 </div>
               </div>
@@ -2691,8 +2691,8 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       const mapEl = document.getElementById('studio-map');
       if (!mapEl || typeof L === 'undefined') return;
 
-      const lat = 44.0256;
-      const lon = 43.0384;
+      const lat = 44.043891;
+      const lon = 43.026931;
 
       const map = L.map('studio-map', {
         center: [lat, lon],
