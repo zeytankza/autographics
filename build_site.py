@@ -1936,7 +1936,8 @@ HTML_TEMPLATE = r'''<!DOCTYPE html>
           center: studioCoords,
           zoom: 17,
           scrollWheelZoom: false,
-          zoomControl: false
+          zoomControl: false,
+          attributionControl: false
         });
 
         L.control.zoom({ position: 'topright' }).addTo(map);
