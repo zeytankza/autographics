@@ -2326,23 +2326,43 @@
   <!-- =========================================================================
        17. LEGAL DOCUMENTS MODAL (PRIVACY, TERMS, COOKIE, GUARANTEE)
        ========================================================================= -->
-  <div id="legal-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
-    <div class="bg-brand-surface arch-border rounded-2xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl relative">
+  <div id="legal-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-6">
+    <div class="bg-brand-surface border border-brand-border rounded-2xl sm:rounded-3xl max-w-3xl w-full max-h-[90vh] flex flex-col shadow-2xl relative">
       
-      <div class="p-6 border-b border-brand-border flex items-center justify-between">
-        <h3 id="legal-modal-title" class="text-lg font-heading font-bold text-white">Правовая информация</h3>
-        <button onclick="closeLegalModal()" class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-brand-dark cursor-pointer">
+      <div class="p-5 sm:p-6 border-b border-brand-border flex items-start justify-between shrink-0">
+        <div>
+          <span class="text-brand-crimson text-[10px] uppercase tracking-wider font-bold">152-ФЗ РФ • Правовая информация</span>
+          <h3 id="legal-modal-title" class="text-lg sm:text-xl font-heading font-bold text-white mt-0.5">Правовая информация</h3>
+        </div>
+        <button onclick="closeLegalModal()" class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-brand-dark transition cursor-pointer shrink-0" aria-label="Закрыть">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
 
-      <div id="legal-modal-body" class="p-6 overflow-y-auto text-xs text-slate-300 space-y-4 leading-relaxed font-sans">
+      <!-- Tab Buttons -->
+      <div class="flex items-center gap-2 px-5 sm:px-6 py-3 border-b border-brand-border shrink-0 overflow-x-auto scrollbar-none">
+        <button id="legal-tab-btn-privacy" onclick="openLegalModal('privacy')" class="px-3.5 py-1.5 rounded-xl font-bold text-xs transition bg-brand-crimson text-white whitespace-nowrap">
+          Политика 152-ФЗ
+        </button>
+        <button id="legal-tab-btn-terms" onclick="openLegalModal('terms')" class="px-3.5 py-1.5 rounded-xl font-medium text-xs transition bg-brand-dark text-slate-400 hover:text-white border border-brand-border whitespace-nowrap">
+          Соглашение и оферта
+        </button>
+        <button id="legal-tab-btn-guarantee" onclick="openLegalModal('guarantee')" class="px-3.5 py-1.5 rounded-xl font-medium text-xs transition bg-brand-dark text-slate-400 hover:text-white border border-brand-border whitespace-nowrap">
+          Регламент гарантии (7 лет)
+        </button>
+        <button id="legal-tab-btn-cookie" onclick="openLegalModal('cookie')" class="px-3.5 py-1.5 rounded-xl font-medium text-xs transition bg-brand-dark text-slate-400 hover:text-white border border-brand-border whitespace-nowrap">
+          Файлы Cookie
+        </button>
+      </div>
+
+      <div id="legal-modal-body" class="p-5 sm:p-6 overflow-y-auto text-xs sm:text-[13px] text-slate-300 space-y-4 leading-relaxed font-sans">
         <!-- Injected via JS -->
       </div>
 
-      <div class="p-4 border-t border-brand-border flex justify-end">
-        <button onclick="closeLegalModal()" class="px-5 py-2 rounded-xl bg-brand-crimson text-white text-xs font-bold cursor-pointer">
-          Понятно
+      <div class="p-4 px-6 border-t border-brand-border flex items-center justify-between shrink-0">
+        <span class="text-[11px] text-slate-400">г. Пятигорск, ул. Ермолова 12А, стр. 5</span>
+        <button onclick="closeLegalModal()" class="px-6 py-2.5 rounded-xl bg-brand-crimson hover:bg-brand-crimsonHover text-white text-xs font-bold transition cursor-pointer">
+          Понятно, закрыть
         </button>
       </div>
 
@@ -2580,59 +2600,124 @@
       if (modal) modal.classList.add('hidden');
     }
 
-    // 11. Legal Documents Modal
+    // 11. Legal Documents Modal (152-FZ Full Compliance)
     const legalTexts = {
       privacy: {
-        title: 'Политика в отношении обработки персональных данных (152-ФЗ)',
+        title: 'Политика обработки и защиты персональных данных (152-ФЗ РФ)',
         body: `
-          <p><strong>1. Общие положения</strong><br>
-          Настоящая Политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению безопасности данных ИП Карапетян А.В. (Детейлинг-центр «Авто Графикс», г. Пятигорск, ул. Ермолова 12А, стр. 5).</p>
-          <p><strong>2. Цели обработки</strong><br>
-          Обработка персональных данных (имя, номер телефона) осуществляется исключительно для: расчета предварительной сметы на оклейку и детейлинг, связи с клиентом для подтверждения записи на осмотр, исполнения договоров об оказании услуг.</p>
-          <p><strong>3. Локализация баз данных</strong><br>
-          В соответствии с ч. 5 ст. 18 152-ФЗ информируем, что сбор, систематизация, накопление, хранение и уточнение персональных данных граждан РФ осуществляются с использованием баз данных, находящихся исключительно на территории Российской Федерации.</p>
+          <div class="p-3.5 rounded-xl bg-brand-dark/80 border border-brand-crimson/20 text-brand-crimsonLight text-[11px] mb-3">
+            Настоящая Политика определяет порядок обработки и защиты персональных данных клиентов детейлинг-центра «Авто Графикс» (ИП Карапетян А.В., ОГРНИП 319265100084512, Ставропольский край, г. Пятигорск, ул. Ермолова 12А, стр. 5) в строгом соответствии с Федеральным законом № 152-ФЗ.
+          </div>
+          <div>
+            <h4 class="font-bold text-white text-sm mb-1">1. Общие положения</h4>
+            <p>1.1. Оператором персональных данных является ИП Карапетян А.В. Обработка данных осуществляется на принципах законности, точности и строгой конфиденциальности.</p>
+            <p class="mt-1">1.2. Оставляя заявку на расчет стоимости оклейки, полировки или заказывая обратный звонок, пользователь подтверждает свое согласие на обработку персональных данных.</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-white text-sm mb-1">2. Категории и состав обрабатываемых данных</h4>
+            <p>2.1. В формах сайта собираются только необходимые для связи и расчета данные:</p>
+            <ul class="list-disc list-inside mt-1 space-y-0.5 text-slate-400">
+              <li>Имя клиента;</li>
+              <li>Номер контактного телефона (мобильный);</li>
+              <li>Марка, модель кузова автомобиля и выбранный пакет детейлинг-услуг;</li>
+              <li>Технические обезличенные данные (cookie, IP-адрес).</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold text-white text-sm mb-1">3. Цели обработки данных</h4>
+            <p>3.1. Персональные данные используются строго для предварительного расчета сметы по полиуретановой защите, подтверждения записи на очный осмотр с замером толщины ЛКП и связи мастера в WhatsApp или по телефону.</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-white text-sm mb-1">4. Локализация баз данных в РФ (ч. 5 ст. 18 152-ФЗ)</h4>
+            <p>4.1. В полном соответствии с ч. 5 ст. 18 152-ФЗ сбор, систематизация, накопление, хранение и уточнение персональных данных граждан РФ производятся на серверах, физически размещенных в Российской Федерации.</p>
+            <p class="mt-1">4.2. Данные не передаются сторонним рекламным агрегаторам или третьим лицам.</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-white text-sm mb-1">5. Сроки хранения и порядок отзыва согласия</h4>
+            <p>5.1. Данные хранятся до момента оказания услуг либо до получения отзыва согласия.</p>
+            <p class="mt-1">5.2. Отзыв согласия осуществляется по звонку администрации: <span class="text-brand-crimson font-bold">+7 (928) 378-00-08</span> либо по адресу студии в Пятигорске. Срок удовлетворения запроса — до 10 рабочих дней.</p>
+          </div>
         `
       },
       terms: {
-        title: 'Пользовательское соглашение и условия обслуживания',
+        title: 'Пользовательское соглашение и статус информации',
         body: `
-          <p><strong>1. Предмет соглашения</strong><br>
-          Сайт носит исключительно информационный характер и не является публичной офертой, определяемой положениями Статьи 437(2) ГК РФ. Точная стоимость услуг определяется после очного осмотра автомобиля мастером студии с замером толщины ЛКП.</p>
-          <p><strong>2. Порядок приема автомобилей</strong><br>
-          Прием автомобиля на оклейку осуществляется по официальному акту приема-передачи с обязательной фотофиксацией всех имеющихся сколов и дефектов до начала работ.</p>
+          <div class="p-3.5 rounded-xl bg-brand-dark/80 border border-brand-border text-slate-300 text-[11px] mb-3">
+            Условия предварительного онлайн-расчета и порядок приема автотранспорта в работу.
+          </div>
+          <div>
+            <h4 class="font-bold text-white text-sm mb-1">1. Статус цен онлайн-калькулятора</h4>
+            <p>1.1. Любая стоимость, полученная в калькуляторе на сайте, носит предварительный ознакомительный характер и не является публичной офертой по смыслу ст. 437(2) Гражданского кодекса РФ.</p>
+            <p class="mt-1">1.2. Окончательная смета фиксируется в заказ-наряде после осмотра состояния лакокрасочного покрытия автомобиля на чистом кузове в освещенном детейлинг-боксе.</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-white text-sm mb-1">2. Акт приема-передачи</h4>
+            <p>2.1. Автомобиль принимается в работу с составлением двустороннего акта осмотра, где фиксируются все эксплуатационные сколы, царапины, перекрашенные элементы и дефекты до начала мойки и демонтажа элементов.</p>
+          </div>
+        `
+      },
+      guarantee: {
+        title: 'Регламент официальной гарантии на оклейку PPF (до 7 лет)',
+        body: `
+          <div class="p-3.5 rounded-xl bg-brand-dark/80 border border-brand-border text-slate-300 text-[11px] mb-3">
+            Официальные гарантийные обязательства детейлинг-центра «Авто Графикс» на пленки Stek, SunTek, Llumar.
+          </div>
+          <div>
+            <h4 class="font-bold text-white text-sm mb-1">1. Гарантия производителя пленки</h4>
+            <p>1.1. До 7 лет гарантии от пожелтения, помутнения, расслоения и растрескивания полиуретанового слоя при условии соблюдения рекомендаций по мойке (давление АВД не ближе 40 см к краям).</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-white text-sm mb-1">2. Гарантия на монтажные работы</h4>
+            <p>2.1. Студия предоставляет 1 год безусловной гарантии на качество прилегания и подвороты краев пленки.</p>
+            <p class="mt-1">2.2. Обязательное условие: бесплатный контрольный осмотр автомобиля через 10–14 дней после выдачи для инспекции адгезии клеевого слоя.</p>
+          </div>
         `
       },
       cookie: {
         title: 'Политика использования файлов Cookie',
         body: `
-          <p>Сайт использует файлы cookie (технические и сессионные) для сохранения состояния калькулятора расчета и работы интерактивной карты. Мы не передаем данные третьим лицам в рекламных целях.</p>
-        `
-      },
-      guarantee: {
-        title: 'Регламент гарантии на полиуретановые плёнки (до 7 лет)',
-        body: `
-          <p>Студия «Авто Графикс» предоставляет официальную письменную гарантию на антигравийные полиуретановые плёнки (Stek, SunTek, Llumar):</p>
-          <p>• От пожелтения, растрескивания и расслоения — до 7 лет.<br>
-          • На работу по оклейке и подвороты краёв — 1 год с правом бесплатной коррекции.<br>
-          • Обязательным условием является прохождение контрольного осмотра через 14 дней после оклейки.</p>
+          <div class="p-3.5 rounded-xl bg-brand-dark/80 border border-brand-border text-slate-300 text-[11px] mb-3">
+            Правила сохранения пользовательских параметров и сессий на сайте.
+          </div>
+          <div>
+            <h4 class="font-bold text-white text-sm mb-1">1. Зачем используются Cookie</h4>
+            <p>1.1. Технические cookie требуются для сохранения выбранных элементов кузова в конфигураторе сметы и запоминания согласия с правилами сайта.</p>
+            <p class="mt-1">1.2. Обезличенные данные счетчиков Яндекс.Метрики используются исключительно для оптимизации скорости работы страниц без идентификации личности.</p>
+          </div>
         `
       }
     };
 
-    function openLegalModal(type) {
+    function openLegalModal(type = 'privacy') {
       const modal = document.getElementById('legal-modal');
       const title = document.getElementById('legal-modal-title');
       const body = document.getElementById('legal-modal-body');
+      
       if (modal && legalTexts[type]) {
         title.innerText = legalTexts[type].title;
         body.innerHTML = legalTexts[type].body;
         modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        
+        ['privacy', 'terms', 'guarantee', 'cookie'].forEach(t => {
+          const btn = document.getElementById('legal-tab-btn-' + t);
+          if (btn) {
+            if (t === type) {
+              btn.className = 'px-3.5 py-1.5 rounded-xl font-bold text-xs transition bg-brand-crimson text-white whitespace-nowrap';
+            } else {
+              btn.className = 'px-3.5 py-1.5 rounded-xl font-medium text-xs transition bg-brand-dark text-slate-400 hover:text-white border border-brand-border whitespace-nowrap';
+            }
+          }
+        });
+        
+        lucide.createIcons();
       }
     }
 
     function closeLegalModal() {
       const modal = document.getElementById('legal-modal');
       if (modal) modal.classList.add('hidden');
+      document.body.style.overflow = '';
     }
 
     // 12. Cookie Consent Logic
